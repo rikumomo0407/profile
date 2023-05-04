@@ -9,7 +9,6 @@
         document.documentElement.classList.add('js');
     </script>
     <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <meta name="description" content="App for finding Wallpaper from words.">
     <meta property="og:title" content="Wallpaper Searcher">
@@ -21,31 +20,41 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta property="og:url" content="https://rikumomo0407.github.io/Wallpaper-Searcher/pages">
     <link rel="canonical" href="https://rikumomo0407.github.io/Wallpaper-Searcher/pages">
-    <link rel="icon" href="app.ico">
+    <link rel="icon" href="https://avatars.githubusercontent.com/rikumomo0407">
     <meta name="theme-color" content="#FFFFFF">
 </head>
 <body>
+    <div id="menu">
+        <input type="checkbox" id="menu-button">
+        <label for="menu-button">MENU</label>
+        <div><i class="fa fa-play-circle"></i></div>
+        <ul>
+            <li><a href="#jump-to-summary">INSTRUCTION</a></li>
+            <li><a href="#release">RELEASE</a></li>
+            <li><a href="#qanda">FAQ</a></li>
+            <li><a href="https://github.com/rikumomo0407/Wallpaper-Searcher">GITHUB</a></li>
+        </ul>
+    </div>
+
+    <div id="darkmode">
+        <script src="darkmode.js"></script>
+        <input type="checkbox" id="js_mode_toggle">
+        <label id="js_rotate" for="js_mode_toggle"></label>
+    </div>
     <div id="top">
-        <div id="menu">
-            <input type="checkbox" id="menu-button">
-            <label for="menu-button">MENU</label>
-            <div><i class="fa fa-play-circle"></i></div>
-            <ul>
-                <li><a href="#jump-to-summary">INSTRUCTION</a></li>
-                <li><a href="#release">RELEASE</a></li>
-                <li><a href="#qanda">FAQ</a></li>
-                <li><a href="https://github.com/rikumomo0407/Wallpaper-Searcher">GITHUB</a></li>
-            </ul>
+        <div id="profile-icon">
+            <img src="https://avatars.githubusercontent.com/rikumomo0407">
+            <p>rikumomo0407</p>
+            <p id="description">Catnose is a software developer, designer and maker.</p>
         </div>
-        	<div id="profile-icon"><img src="https://avatars.githubusercontent.com/rikumomo0407"><p>rikumomo0407</p></div>
        	<div id="sns">
-       		<ul>
-       			<li></li>
-       			<li></li>
-       			<li></li>
-       		</ul>
+            <div id="container">
+       			<div id="twitter"><a href="https://twitter.com/rikumomo0407"><img src="images/twitter.svg" alt="twitter"></a></div>
+       			<div id="instagram"><a href="https://www.instagram.com/rikumomo0407"><img src="images/instagram.svg" alt="instagram"></a></div>
+       			<div id="github"><a href="https://github.com/rikumomo0407"><img src="images/github.svg" alt="github"></a></div>
+                <div id="gmail"><a href="https://mail.google.com/mail/?view=cm&to=rikumomo0407@gmail.com"><img src="images/gmail.svg" alt="gmail"></a></div>
+            </div>
        	</div>
-       	<p id="app-detail">設定された単語から画像を取得し、壁紙を自動で変更することで毎日のデスクトップ画面を楽しくします。</p>
     </div>
     <div id="release">
         <h1>更新情報</h1>
@@ -56,7 +65,7 @@
         </ul>
     </div>
     <div id="qanda">
-        <h1>よくある質問</h1>
+        <h1>FAQ</h1>
         <ul>
             <li>
                 <input type="checkbox" id="question-A">
@@ -74,7 +83,7 @@
                 <div class="answer-C">A.<p>なんらかの不具合が起きている可能性があります。ソフトウェアの更新、または再インストールを推奨します。</p></div>
             </li>
         </ul>
-        <div id="message">その他の質問は<a href="https://mail.google.com/mail/?view=cm&to=rikumomo0407@gmail.com&su=Qestion-Wallpaper-Searcher">こちら</a>から送信ください。</div>
+        <div id="message">Click <a href="https://mail.google.com/mail/?view=cm&to=rikumomo0407@gmail.com&su=Qestion-Wallpaper-Searcher">here</a> for more questions</div>
     </div>
     <div class="footer">
         <p>© Copyright 2022 rikumomo0407 All rights reserved.</p>
