@@ -1,5 +1,5 @@
 # profile
-👋 Here is my profile
 
+↓↓↓ About me ↓↓↓
 
-![https://rikumomo0407.github.io/profile/]
+https://rikumomo0407.github.io/profile
