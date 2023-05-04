@@ -1,6 +1,11 @@
+*,*::before,*::after{box-sizing:border-box}*{margin:0}html,body{height:100%}body{line-height:1.5;-webkit-font-smoothing:antialiased}img,picture,video,canvas,svg{display:block;max-width:100%}input,button,textarea,select{font:inherit}p,h1,h2,h3,h4,h5,h6{overflow-wrap:break-word}#root,#__next{isolation:isolate}
+
 body{
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-    background-color: gray;
+    font-family: Inter,Helvetica Neue,Arial,Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif;
+    color: #fff;
+    background-color: rgb(26, 30, 46);
+    transition-duration: 1s;
+    transition-property: color, background-color;
 }
 
 a{
@@ -10,8 +15,21 @@ a{
     font-weight: 600;
 }
 
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+h1{
+    border-bottom: 2px solid rgba(232,231,255,.09);
+    margin-bottom: 3%;
+}
+
+.js-mode-light h1{
+    border-bottom: 2px solid rgba(232, 231, 255, 0.322);
+}
+
 #top{
-    position: relative;
     width: 100%;
     height: 100vh;
     text-align: center;
@@ -20,12 +38,14 @@ a{
 }
 
 #menu{
+    position: fixed;
+    top: 10px;
+    left: 10px;
     display: flex;
-    text-align: left;
 }
 
 #menu div, #menu ul li{
-    margin-left: 30px;
+    padding-left: 30px;
 }
 
 #menu label,  #menu li a{
@@ -80,11 +100,98 @@ a{
     }
 }
 
+.js-mode-light{
+    background-color: #9cd6ef;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+#darkmode label{
+    position: fixed;
+    top: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+    transform: rotate(0);
+    transition: transform 1s;
+    cursor: pointer;
+}
+
+#darkmode label::before {
+    content: "🌙";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+#darkmode label::after {
+    content: "🌞";
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scale(1,-1);
+}
+
+#profile-icon{
+    margin-top: 2rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
 #profile-icon img{
 	display: inline-block;
-	border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
-    width: 100px;       /* ※縦横を同値に */
-    height: 100px;       /* ※縦横を同値に */
+	border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+#description{
+    margin-top: 1rem;
+    color: rgba(228, 232, 250, 0.55);
+}
+
+#container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+#container div a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 26px;
+    box-shadow: 0 20px 40px -16px rgba(0,0,0,.4);
+    aspect-ratio: 1/1;
+    transition: .2s ease;
+}
+
+#container div a:hover{
+    transform: translateY(-2px) scale(1.02);
+}
+
+#container img{
+    width: 35%;
+}
+
+#sns #twitter a{
+    background: linear-gradient(144deg,#84d0ff,#19a7ff 50%,#1da1f2 60%,#1a7ee9);
+}
+
+#sns #instagram a{
+    background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+}
+
+#sns #github a{
+    background: linear-gradient(144deg,#363636,#26292c 50%,#161b22,#161616);
+}
+
+#sns #gmail a{
+    background: linear-gradient(144deg,#ff8176,#d6473a 50%,#dc483c,#e81f1f);
 }
 
 #top:after{
@@ -117,11 +224,6 @@ a{
     padding: 3% 15%;
 }
 
-#release h1{
-    border-bottom: 2px solid gray;
-    margin-bottom: 2%;
-}
-
 #release ul{
     font-weight: 500;
     font-size: 1.3rem;
@@ -137,11 +239,6 @@ a{
 
 #qanda{
     padding: 3% 15%;
-}
-
-#qanda h1{
-    border-bottom: 2px solid gray;
-    margin-bottom: 20px;
 }
 
 #qanda ul{
@@ -164,7 +261,12 @@ a{
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
-    background: rgb(232, 232, 232);
+    background: #2b3047;
+}
+
+.js-mode-light #qanda label{
+    color: #33374a;
+    background: #fff;
 }
 
 #question-A, #question-B, #question-C, .answer-A, .answer-B, .answer-C{
@@ -208,7 +310,7 @@ a{
 }
 
 #qanda #message a{
-    color: blue;
+    color: #968cff;
 }
 
 .footer{
@@ -217,9 +319,21 @@ a{
 	align-items: center;
     text-align: center;
     padding: 20px;
-    color: rgb(66, 66, 66);
-    background-color: rgb(200, 200, 200);
+    color: rgba(228, 232, 250, 0.55);
 }
+
+@media screen and (max-width: 768px){
+    #container{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media screen and (max-width: 425px){
+    #container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
 
 @media screen and (max-width: 782px){
     #app-title{
