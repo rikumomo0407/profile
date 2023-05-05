@@ -3,9 +3,13 @@
 body{
     font-family: Inter,Helvetica Neue,Arial,Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif;
     color: #fff;
-    background-color: rgb(26, 30, 46);
+    background-color: #1a1e2e;
     transition-duration: 1s;
     transition-property: color, background-color;
+}
+
+.js-mode-light{
+    background-color: #9cd6ef;
 }
 
 a{
@@ -21,12 +25,81 @@ ul{
 }
 
 h1{
-    border-bottom: 2px solid rgba(232,231,255,.09);
-    margin-bottom: 3%;
+    margin-top: 4rem;
+    font-size: 2.2rem;
+    text-align: center;
 }
 
-.js-mode-light h1{
+h2{
+    font-size: 21px;
+    margin-right: 31px;
+    margin-bottom: 1rem;
+}
+
+/* .js-mode-light h1{
     border-bottom: 2px solid rgba(232, 231, 255, 0.322);
+} */
+
+.bubble{
+    font-weight: 400;
+    font-size: .95rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    padding: 1.3rem 1.2rem;
+    border-radius: 14px;
+    background-color: #2b3047;
+}
+
+.js-mode-light .bubble{
+    color: #33374a;
+    background: #fff;
+}
+
+/* .js-mode-light .answer-A, .answer-B, .answer-C{
+    color: #fff;
+    background: rgb(85, 0, 255);
+} */
+
+header{
+    position: fixed;
+    top: -1px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 0 1rem;
+    background-color: rgba(26, 30, 46, 0.5);
+    backdrop-filter: blur(16px);
+    z-index: 10;
+}
+
+.js-mode-light header{
+    background-color: rgb(154, 213, 239, 0.5);
+}
+
+#menu{
+    display: inline-block;
+    margin-right: .3rem;
+}
+
+#menu label img{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+header img{
+	border-radius: 50%;
+    width: 21px;
+    height: 21px;
+}
+
+header #username{
+    height: 62px;
+    line-height: 62px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 #top{
@@ -37,7 +110,7 @@ h1{
     color: #fff;
 }
 
-#menu{
+/* #menu{
     position: fixed;
     top: 10px;
     left: 10px;
@@ -98,19 +171,15 @@ h1{
         opacity: 1;
         transform: translateX(0);
     }
-}
+} */
 
-.js-mode-light{
-    background-color: #9cd6ef;
-}
-
-input[type="checkbox"] {
+input[type="checkbox"]{
     display: none;
 }
 
 #darkmode label{
-    position: fixed;
-    top: -50px;
+    position: absolute;
+    top: -46px;
     right: -50px;
     width: 100px;
     height: 100px;
@@ -120,13 +189,13 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-#darkmode label::before {
+#darkmode label::before{
     content: "🌙";
     position: absolute;
     left: 0;
     bottom: 0;
 }
-#darkmode label::after {
+#darkmode label::after{
     content: "🌞";
     position: absolute;
     right: 0;
@@ -146,6 +215,7 @@ input[type="checkbox"] {
 	border-radius: 50%;
     width: 100px;
     height: 100px;
+    margin-top: 2rem;
 }
 
 #description{
@@ -220,30 +290,177 @@ input[type="checkbox"] {
     }
 }
 
-#release{
-    padding: 3% 15%;
+#timeline{
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
-#release ul{
+#filter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 32px;
+    gap: 22px;
+}
+
+#filter input{
+    display: none;
+}
+
+#filter label{
+    width: 74px;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background: transparent;
+    transition: .25s;
+    outline-offset: 2px;
+    text-align: center;
+}
+
+#filter label p{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 34%;
+    font-size: 30px;
+    background: rgba(232,231,255,.09);
+}
+
+.js-mode-light #filter label p{
+    background: rgba(232, 231, 255, 0.5);
+}
+
+#filter label p::after{
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #1a1e2e;
+    border-radius: 34%;
+}
+
+.js-mode-light #filter label p::after{
+    background: #9cd6ef;
+}
+
+#filter label p span{
+    z-index: 1;
+}
+
+#filter input:checked + label{
+    font-weight: 700;
+}
+
+#filter input:checked + label p{
+    background: linear-gradient(25deg,#e1689d,#4046ff);
+}
+
+.js-mode-light #filter input:checked + label p{
+    background: linear-gradient(25deg,#4ed0ff,#9b5efc);
+}
+
+#filter label > span{
+    font-size: 13px;
     font-weight: 500;
-    font-size: 1.3rem;
-    list-style: none;
-    padding: 0 10px;
+    color: rgba(228,232,250,.55);
 }
 
-#release p{
-    font-weight: 400;
-    font-size: 1rem;
-    margin: 5px 0 10px 35px;
+.js-mode-light #filter label > span{
+    color: #fff;
+}
+
+#timeline section{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+#timeline ul{
+    position: relative;
+}
+
+#timeline ul::before{
+    content: "";
+    position: absolute;
+    left: -2px;
+    top: 10px;
+    bottom: 0;
+    width: 2px;
+    background-color: rgba(232, 231, 255, 0.09);
+}
+
+.js-mode-light #timeline ul::before{
+    background-color: rgba(232, 231, 255, 0.5);
+}
+
+#timeline li{
+    position: relative;
+    display: flex;
+}
+
+#timeline li:not(:first-child){
+    margin-top: 2.7rem;
+}
+
+#timeline li:last-child::before{
+    content: "";
+    position: absolute;
+    left: -2px;
+    top: 10px;
+    bottom: 0;
+    width: 2px;
+    background-color: rgb(26, 30, 46);
+}
+
+.js-mode-light #timeline li:last-child::before{
+    background-color: #9cd6ef;
+}
+
+#timeline .dot{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #1a1e2e;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    top: 2px;
+    left: -9px;
+    background-color: #4f536a;
+}
+
+.js-mode-light #timeline .dot{
+    border: 4px solid #9cd6ef;
+    background-color: #e8e7ff;
+}
+
+#timeline .log{
+    padding-left: 32px;
+}
+
+#timeline li time{
+    color: rgba(228, 232, 250, 0.55);
+}
+
+.js-mode-light #timeline li time{
+    color: rgba(255, 255, 255, 0.8);
 }
 
 #qanda{
-    padding: 3% 15%;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
 #qanda ul{
     list-style: none;
-    padding: 0 20px;
+    margin-top: 1rem;
     font-weight: 400;
     font-size: 1.2rem;
 }
@@ -258,38 +475,32 @@ input[type="checkbox"] {
 
 #qanda label{
     display: inline-block;
-    padding: 10px;
-    border-radius: 10px;
     cursor: pointer;
-    background: #2b3047;
 }
 
-.js-mode-light #qanda label{
-    color: #33374a;
-    background: #fff;
-}
-
-#question-A, #question-B, #question-C, .answer-A, .answer-B, .answer-C{
+#answer-A, #answer-B, #answer-C{
     display: none;
     width: fit-content;
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 10px;
     color: #fff;
     background: rgb(85, 0, 255);
 }
 
-#qanda #question-A:checked ~ .answer-A{
+.js-mode-light #answer-A, .js-mode-light #answer-B, .js-mode-light #answer-C{
+    color: #fff;
+    background: rgb(0, 174, 255);
+}
+
+#qanda #question-A:checked ~ #answer-A{
     display: flex;
     animation: SlideLabel 1s;
 }
 
-#qanda #question-B:checked ~ .answer-B{
+#qanda #question-B:checked ~ #answer-B{
     display: flex;
     animation: SlideLabel 1s;
 }
 
-#qanda #question-C:checked ~ .answer-C{
+#qanda #question-C:checked ~ #answer-C{
     display: flex;
     animation: SlideLabel 1s;
 }
@@ -313,11 +524,12 @@ input[type="checkbox"] {
     color: #968cff;
 }
 
-.footer{
+footer{
     display: flex;
     justify-content: center;
 	align-items: center;
     text-align: center;
+    margin-top: 40px;
     padding: 20px;
     color: rgba(228, 232, 250, 0.55);
 }
@@ -355,18 +567,16 @@ input[type="checkbox"] {
     #oss{
         padding: 10%;
     }
-    
-    #qanda{
-        padding: 10% 5%;
+}
+
+@media screen and (max-width: 260px){
+    #usericon, #username span{
+        display: none;
     }
 }
 
 @media screen and (max-height: 500px){
     #top:after{
         display: none;
-    }
-
-    #app-title{
-        padding-top: 5vh;
     }
 }
