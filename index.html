@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
-    <title>rikumomo0407</title>   
+    <title>rikumomo0407's profile</title>   
     <script type="module">
         document.documentElement.classList.remove('no-js');
         document.documentElement.classList.add('js');
     </script>
-    <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <meta name="description" content="App for finding Wallpaper from words.">
-    <meta property="og:title" content="Wallpaper Searcher">
-    <meta property="og:description" content="App for finding Wallpaper from words.">
-    <meta property="og:image" content="images/web_search.svg">
-    <meta property="og:image:alt" content="App for finding Wallpaper from words.">
+    <meta name="description" content="rikumomo0407's profile site.">
+    <meta property="og:title" content="rikumomo0407's profile">
+    <meta property="og:description" content="rikumomo0407's profile site.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/rikumomo0407">
+    <meta property="og:image:alt" content="rikumomo0407's icon">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:url" content="https://rikumomo0407.github.io/Wallpaper-Searcher/pages">
-    <link rel="canonical" href="https://rikumomo0407.github.io/Wallpaper-Searcher/pages">
+    <meta property="og:url" content="https://rikumomo0407.github.io/profile">
+    <link rel="canonical" href="https://rikumomo0407.github.io/profile">
     <link rel="icon" href="https://avatars.githubusercontent.com/rikumomo0407">
     <meta name="theme-color" content="#FFFFFF">
 </head>
@@ -62,27 +61,25 @@
                 <div id="gmail"><a href="https://mail.google.com/mail/?view=cm&to=rikumomo0407@gmail.com"><img src="images/gmail.svg" alt="gmail"></a></div>
             </div>
        	</div>
+        <script src="scroll.js"></script>
+        <div id="scroll"><img src="images/scroll.svg"></div>
     </div>
     <div id="timeline">
         <h1>Timeline</h1>
         <nav id="filter">
             <script src="filter.js"></script>
-            <input type="radio" name="filter_button" id="filter_all" checked>
-            <label id="js_all" for="filter_all"><p><span>😻</span></p><span>All</span></label>
-            <input type="radio" name="filter_button" id="filter_releases">
-            <label id="js_releases" for="filter_releases"><p><span>🔥</span></p><span>Releases</span></label>
-            <input type="radio" name="filter_button" id="filter_notes">
-            <label id="js_notes" for="filter_notes"><p><span>📃</span></p><span>Notes</span></label>
-            <input type="radio" name="filter_button" id="filter_others">
-            <label id="js_others" for="filter_others"><p><span>⚡</span></p><span>Others</span></label>
+            <input type="radio" name="filter_button" value="all" id="all" checked>
+            <label for="all"><p><span>😻</span></p><span>All</span></label>
+            <input type="radio" name="filter_button" value="releases" id="releases">
+            <label for="releases"><p><span>🔥</span></p><span>Releases</span></label>
+            <input type="radio" name="filter_button" value="notes" id="notes">
+            <label for="notes"><p><span>📃</span></p><span>Notes</span></label>
+            <input type="radio" name="filter_button" value="others" id="others">
+            <label for="others"><p><span>⚡</span></p><span>Others</span></label>
         </nav>
         <section id="2023">
             <h2>2023</h2>
-            <ul>
-                <li class="Releases"><div class="dot"></div><div class="log"><time>23-03-29</time><p class="bubble">フォルダ名とディレクトリを変更</p></div></li>
-                <li class="Notes"><div class="dot"></div><div class="log"><time>23-02-09</time><p class="bubble">フォームのサイズを拡大、データ容量の削減、プログラムの不具合を修正</p></div></li>
-                <li class="Others"><div class="dot"></div><div class="log"><time>23-01-28</time><p class="bubble">ベータ版をZIPファイルで公開</p></div></li>
-            </ul>
+            <ul></ul>
         </section>
     </div>
     <div id="qanda">
@@ -91,17 +88,17 @@
             <li>
                 <input type="checkbox" id="question-A">
                 <label for="question-A" class="bubble">Q.&nbsp;どうやって画像を取得していますか？</label>
-                <div id="answer-A" class="bubble">A.<p>Seleinumというスクレイピングツールを使ってGoogleの画像検索結果からランダムに画像を取得しています。</p></div>
+                <div id="answer" class="bubble">A.<p>Seleinumというスクレイピングツールを使ってGoogleの画像検索結果からランダムに画像を取得しています。</p></div>
             </li>
             <li>
                 <input type="checkbox" id="question-B">
                 <label for="question-B" class="bubble">Q.&nbsp;ウイルスソフトとして検出されました。</label>
-                <div id="answer-B" class="bubble">A.<p>個人で制作しているソフトウェアのためセキュリティソフトなどにウイルス性があると認識されてしまう場合があります。当ソフトにはウイルスなどのPCに害を与えるプログラムは一切仕込んでおりません。</p></div>
+                <div id="answer" class="bubble">A.<p>個人で制作しているソフトウェアのためセキュリティソフトなどにウイルス性があると認識されてしまう場合があります。当ソフトにはウイルスなどのPCに害を与えるプログラムは一切仕込んでおりません。</p></div>
             </li>
             <li>
                 <input type="checkbox" id="question-C">
                 <label for="question-C" class="bubble">Q.&nbsp;壁紙が変わりません。</label>
-                <div id="answer-C" class="bubble">A.<p>なんらかの不具合が起きている可能性があります。ソフトウェアの更新、または再インストールを推奨します。</p></div>
+                <div id="answer" class="bubble">A.<p>なんらかの不具合が起きている可能性があります。ソフトウェアの更新、または再インストールを推奨します。</p></div>
             </li>
         </ul>
         <div id="message">Click <a href="https://mail.google.com/mail/?view=cm&to=rikumomo0407@gmail.com&su=Qestion-Wallpaper-Searcher">here</a> for more questions</div>
