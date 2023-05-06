@@ -478,8 +478,7 @@ input[type="checkbox"]{
     cursor: pointer;
 }
 
-#answer-A, #answer-B, #answer-C{
-    display: none;
+#answer-A:, #answer-B, #answer-C{
     width: fit-content;
     color: #fff;
     background: rgb(85, 0, 255);
@@ -504,6 +503,25 @@ input[type="checkbox"]{
     display: flex;
     animation: SlideLabel 1s;
 }
+
+#qanda #question-A:not(:checked) ~ #answer-A{
+    display: none;
+    animation: SlideLabel 1s;
+    animation-direction:reverse;
+}
+
+#qanda #question-B:not(:checked) ~ #answer-B{
+    display: none;
+    animation: SlideLabel 1s;
+    animation-direction:reverse;
+}
+
+#qanda #question-C:not(:checked) ~ #answer-C{
+    display: none;
+    animation: SlideLabel 1s;
+    animation-direction:reverse;
+}
+
 
 @keyframes SlideLabel {
     0% {
