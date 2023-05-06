@@ -1,8 +1,7 @@
 {
     "timeline":[
-        {"date" : "23-03-29", "category" : "releases", "content" : "フォルダ名とディレクトリを変更"},
-        {"date" : "23-02-09", "category" : "notes", "content" : "フォームのサイズを拡大、データ容量の削減、プログラムの不具合を修正"},
-        {"date" : "23-01-28", "category" : "others", "content" : "ベータ版をZIPファイルで公開"}
+        {"date" : "23-05-07", "category" : "others", "content" : "不具合があれば教えてください。"},
+        {"date" : "23-05-07", "category" : "notes", "content" : "このプロフィールサイトは本日公開予定です！！"}
     ],
     "repository":[
     ]
