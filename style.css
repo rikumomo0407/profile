@@ -36,10 +36,6 @@ h2{
     margin-bottom: 1rem;
 }
 
-/* .js-mode-light h1{
-    border-bottom: 2px solid rgba(232, 231, 255, 0.322);
-} */
-
 .bubble{
     font-weight: 400;
     font-size: .95rem;
@@ -55,11 +51,6 @@ h2{
     background: #fff;
 }
 
-/* .js-mode-light .answer-A, .answer-B, .answer-C{
-    color: #fff;
-    background: rgb(85, 0, 255);
-} */
-
 header{
     position: fixed;
     top: -1px;
@@ -70,6 +61,7 @@ header{
     padding: 0 1rem;
     background-color: rgba(26, 30, 46, 0.5);
     backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     z-index: 10;
 }
 
@@ -264,17 +256,13 @@ input[type="checkbox"]{
     background: linear-gradient(144deg,#ff8176,#d6473a 50%,#dc483c,#e81f1f);
 }
 
-#top:after{
+#scroll img{
     position: absolute;
+    width: 3rem;
     left: 0;
     right: 0;
     bottom: 5%;
     margin: auto;
-	font-family: "Font Awesome 6 Free";
-	content: '\f103';
-    font-weight: 600;
-    font-size: 3rem;
-    transform: translate(-50%, -50%);
     animation: updown 2s infinite ease-in-out;
 }
 
@@ -352,10 +340,6 @@ input[type="checkbox"]{
     z-index: 1;
 }
 
-#filter input:checked + label{
-    font-weight: 700;
-}
-
 #filter input:checked + label p{
     background: linear-gradient(25deg,#e1689d,#4046ff);
 }
@@ -368,6 +352,10 @@ input[type="checkbox"]{
     font-size: 13px;
     font-weight: 500;
     color: rgba(228,232,250,.55);
+}
+
+#filter input:checked + label > span{
+    font-weight: 700;
 }
 
 .js-mode-light #filter label > span{
@@ -397,6 +385,19 @@ input[type="checkbox"]{
 .js-mode-light #timeline ul::before{
     background-color: rgba(232, 231, 255, 0.5);
 }
+
+[value="all"]:checked ~ #timeline li{
+    display: flex;
+}
+
+[value="releases"]:checked ~ #timeline ul li:not([data-category="releases"]), 
+[value="notes"]:checked ~ #timeline ul li:not([data-category="notes"]), 
+[value="others"]:checked ~ #timeline ul li:not([data-category="others"]) {
+    display: none;
+}
+
+
+
 
 #timeline li{
     position: relative;
@@ -478,57 +479,29 @@ input[type="checkbox"]{
     cursor: pointer;
 }
 
-#answer-A:, #answer-B, #answer-C{
+#answer{
+    display: none;
     width: fit-content;
     color: #fff;
     background: rgb(85, 0, 255);
 }
 
-.js-mode-light #answer-A, .js-mode-light #answer-B, .js-mode-light #answer-C{
+.js-mode-light #answer{
     color: #fff;
     background: rgb(0, 174, 255);
 }
 
-#qanda #question-A:checked ~ #answer-A{
+input[type="checkbox"]:checked ~ #answer{
     display: flex;
     animation: SlideLabel 1s;
 }
-
-#qanda #question-B:checked ~ #answer-B{
-    display: flex;
-    animation: SlideLabel 1s;
-}
-
-#qanda #question-C:checked ~ #answer-C{
-    display: flex;
-    animation: SlideLabel 1s;
-}
-
-#qanda #question-A:not(:checked) ~ #answer-A{
-    display: none;
-    animation: SlideLabel 1s;
-    animation-direction:reverse;
-}
-
-#qanda #question-B:not(:checked) ~ #answer-B{
-    display: none;
-    animation: SlideLabel 1s;
-    animation-direction:reverse;
-}
-
-#qanda #question-C:not(:checked) ~ #answer-C{
-    display: none;
-    animation: SlideLabel 1s;
-    animation-direction:reverse;
-}
-
 
 @keyframes SlideLabel {
-    0% {
+    from {
         opacity: 0;
         transform: translateY(-10px);
     }
-    100% {
+    to {
         opacity: 1;
         transform: translateY(0);
     }
@@ -564,37 +537,8 @@ footer{
     }
 }
 
-
-@media screen and (max-width: 782px){
-    #app-title{
-        font-size: 10vw;
-    }
-
-    #top:after{
-        bottom: 2%;
-    }
-
-    .summary{
-        font-size: 1.5vw;
-    }
-    
-    #release{
-        padding: 10% 5%;
-    }
-    
-    #oss{
-        padding: 10%;
-    }
-}
-
 @media screen and (max-width: 260px){
     #usericon, #username span{
-        display: none;
-    }
-}
-
-@media screen and (max-height: 500px){
-    #top:after{
         display: none;
     }
 }
