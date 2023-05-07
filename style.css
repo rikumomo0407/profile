@@ -165,7 +165,7 @@ header #username{
     max-width: 900px;
     text-align: center;
     margin: 0 auto;
-    padding: 50px 2rem 110px;
+    padding: 50px 2rem;
     color: #fff;
 }
 
@@ -231,31 +231,27 @@ header #username{
 }
 
 #scroll img{
-    position: absolute;
     width: 3rem;
-    left: 0;
-    right: 0;
-    bottom: 7%;
-    margin: auto;
+    margin: 60px auto;
     animation: updown 2s infinite ease-in-out;
 }
 
 @keyframes updown {
     0% {
-        transform: translate(0, 0);
+        transform: translateY(0);
     }
     50% {
-        transform: translate(0, -4vh);
+        transform: translateY(30px);
     }
     100% {
-        transform: translate(0, 0);
+        transform: translateY(0);
     }
 }
 
 #timeline{
     max-width: 780px;
     margin: 0 auto;
-    padding: 60px 1.5rem 0;
+    padding: 20px 1.5rem;
 }
 
 #filter{
