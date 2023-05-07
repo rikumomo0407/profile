@@ -47,6 +47,7 @@ h1{
     margin-top: 4rem;
     font-size: 2.2rem;
     text-align: center;
+    margin-bottom: 32px;
 }
 
 h2{
@@ -74,7 +75,6 @@ header{
     position: fixed;
     top: -1px;
     width: 100%;
-    height: auto;
     padding: 0 1rem;
     background-color: var(--bg-header-color);
     backdrop-filter: blur(16px);
@@ -82,40 +82,32 @@ header{
     z-index: 10;
 }
 
-#user{
+#menu-label{
     display: flex;
     align-items: center;
-    margin-left: 1.5rem;
+    width: 165px;
+    height: 24px;
+    margin: 20px 0;
+    cursor: pointer;
+    
 }
 
-#menu{
-    margin-right: .3rem;
+#menuicon img{
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
 }
 
 #usericon img{
-	border-radius: 50%;
     width: 21px;
-    height: 21px;
+    width: 21px;
+    border-radius: 50%;
 }
 
-header #username{
-    height: 62px;
-    line-height: 62px;
+#username{
     margin-left: 10px;
     font-size: 16px;
     font-weight: 500;
-}
-
-#menu-label{
-    position: absolute;
-    top: 24px;
-    left: 1rem;
-    cursor: pointer;
-}
-
-#menu-label img{
-    width: 15px;
-    height: 15px;
 }
 
 #index{
@@ -214,19 +206,19 @@ header #username{
     width: 35%;
 }
 
-#sns #twitter a{
+#sns #twitter-icon a{
     background: linear-gradient(144deg,#84d0ff,#19a7ff 50%,#1da1f2 60%,#1a7ee9);
 }
 
-#sns #instagram a{
+#sns #instagram-icon a{
     background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
 }
 
-#sns #github a{
+#sns #github-icon a{
     background: linear-gradient(144deg,#363636,#26292c 50%,#161b22,#161616);
 }
 
-#sns #gmail a{
+#sns #gmail-icon a{
     background: linear-gradient(144deg,#ff8176,#d6473a 50%,#dc483c,#e81f1f);
 }
 
@@ -258,7 +250,6 @@ header #username{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 32px;
     gap: 22px;
 }
 
@@ -387,6 +378,63 @@ header #username{
     color: var(--font-pale-color);
 }
 
+#twitter{
+    margin-top: 30px;
+    padding: 20px 2rem;
+}
+
+#twitter-setting{
+    display: flex;
+    justify-content: center;
+}
+
+#instagram{
+    margin-top: 30px;
+    padding: 20px 2rem;
+}
+
+#instagram-setting{
+    display: flex;
+    justify-content: center;
+}
+
+#scroll-box{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 4px;
+    max-width: 623px;
+    aspect-ratio: 1/1;
+    margin-top: 1.5rem;
+    border: 1px solid #000;
+    overflow-y: scroll;     
+}
+
+#scroll-box::-webkit-scrollbar{
+    display:none;
+}
+
+#instagram-setting img{
+    aspect-ratio: 1/1;
+}
+
+#instagram-setting a{
+   position: relative;
+}
+
+#instagram-setting a:hover::before{
+    position: absolute;
+    content: '投稿を見る';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 #qanda{
     max-width: 780px;
     margin: 0 auto;
@@ -395,9 +443,6 @@ header #username{
 
 #qanda ul{
     list-style: none;
-    margin-top: 2rem;
-    font-weight: 400;
-    font-size: 1.2rem;
 }
 
 #qanda li{
@@ -458,13 +503,7 @@ footer{
     color: var(--font-pale-color);
 }
 
-@media screen and (max-width: 768px){
-    #container{
-        grid-template-columns: repeat(3,1fr);
-    }
-}
-
-@media screen and (max-width: 425px){
+@media screen and (max-width: 500px){
     #container{
         grid-template-columns: repeat(2,1fr);
     }
@@ -477,7 +516,10 @@ footer{
 }
 
 @media screen and (max-width: 260px){
-    #usericon, #username span{
+    #menu-label{
+        width: 16px;
+    }
+    #usericon, #username{
         display: none;
     }
 }
