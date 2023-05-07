@@ -165,7 +165,7 @@ header #username{
     max-width: 900px;
     text-align: center;
     margin: 0 auto;
-    padding: 50px 2rem;
+    padding: 50px 2rem 0;
     color: #fff;
 }
 
