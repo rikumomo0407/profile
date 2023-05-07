@@ -1,6 +1,7 @@
 {
     "timeline":[
-        {"date" : "23-05-07", "category" : "others", "content" : "不具合があれば教えてください。"},
+        {"date" : "23-05-07", "category" : "others", "content" : "*このサイトは随時更新予定です。"},
+        {"date" : "23-05-07", "category" : "releases", "content" : "プロフィールサイトをリリースしました！！"},
         {"date" : "23-05-07", "category" : "notes", "content" : "このプロフィールサイトは本日公開予定です！！"}
     ],
     "repository":[
