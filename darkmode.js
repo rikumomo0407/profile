@@ -12,3 +12,5 @@ window.addEventListener('DOMContentLoaded', ()=>{
         }
     });
 });
+
+//<div id="twitter-setting"><a class="twitter-timeline" data-lang="en" data-width="500" data-height="500" data-theme="dark" href="https://twitter.com/rikumomo0407?ref_src=twsrc%5Etfw" data-chrome="noheader nofooter noscrollbar transparent">Tweets by rikumomo0407</a></div>
