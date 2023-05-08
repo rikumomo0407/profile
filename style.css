@@ -405,7 +405,8 @@ header{
     max-width: 623px;
     aspect-ratio: 1/1;
     margin-top: 1.5rem;
-    overflow-y: scroll;     
+    overflow-y: scroll;
+    border: 2px solid red;
 }
 
 #scroll-box::-webkit-scrollbar{
@@ -413,6 +414,7 @@ header{
 }
 
 #scroll-box img{
+    width: 100%;
     aspect-ratio: 1/1;
 }
 
