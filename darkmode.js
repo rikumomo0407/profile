@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
         rotateIcon.style.transform = 'rotate(' + nowRotate + 'deg)';
         if(e.target.checked) {
             document.body.classList.add('mode-light');
-            twitter = '<div id="twitter-setting"><a class="twitter-timeline" data-lang="en" data-width="500" data-height="500" href="https://twitter.com/rikumomo0407?ref_src=twsrc%5Etfw" data-chrome="noheader nofooter noscrollbar transparent">Tweets by rikumomo0407</a></div>';
+            twitter = '<div id="twitter-setting"><a class="twitter-timeline" data-lang="en" data-width="500" data-height="500" data-theme="light" href="https://twitter.com/rikumomo0407?ref_src=twsrc%5Etfw" data-chrome="noheader nofooter noscrollbar transparent">Tweets by rikumomo0407</a></div>';
         } else {
             document.body.classList.remove('mode-light');
             twitter = '<div id="twitter-setting"><a class="twitter-timeline" data-lang="en" data-width="500" data-height="500" data-theme="dark" href="https://twitter.com/rikumomo0407?ref_src=twsrc%5Etfw" data-chrome="noheader nofooter noscrollbar transparent">Tweets by rikumomo0407</a></div>';
