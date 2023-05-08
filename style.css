@@ -119,7 +119,7 @@ header{
 #index a{
     display: block;
     width: 100%;
-    padding: 0 1rem;
+    padding: .5rem 1rem;
 }
 
 #index a:hover{
@@ -405,7 +405,6 @@ header{
     max-width: 623px;
     aspect-ratio: 1/1;
     margin-top: 1.5rem;
-    border: 1px solid #000;
     overflow-y: scroll;     
 }
 
@@ -413,7 +412,7 @@ header{
     display:none;
 }
 
-#instagram-setting img{
+#scroll-box img{
     aspect-ratio: 1/1;
 }
 
