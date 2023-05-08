@@ -406,7 +406,7 @@ header{
     aspect-ratio: 1/1;
     margin-top: 1.5rem;
     overflow-y: scroll;
-    border: 2px solid red;
+    border: 6px solid red;
 }
 
 #scroll-box::-webkit-scrollbar{
