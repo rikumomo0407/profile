@@ -38,7 +38,7 @@ a{
     font-weight: 600;
 }
 
-ul{
+ul, ol{
     list-style: none;
     padding: 0;
 }
@@ -224,7 +224,7 @@ header{
 
 #scroll img{
     width: 3rem;
-    margin: 60px auto;
+    margin: 90px auto 30px;
     animation: updown 2s infinite ease-in-out;
 }
 
@@ -246,18 +246,18 @@ header{
     padding: 20px 1.5rem;
 }
 
-#filter{
+.filter{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 22px;
 }
 
-#filter input{
+.filter input{
     display: none;
 }
 
-#filter label{
+.filter label{
     width: 74px;
     border: none;
     cursor: pointer;
@@ -268,7 +268,7 @@ header{
     text-align: center;
 }
 
-#filter label p{
+.filter label p{
     position: relative;
     display: flex;
     align-items: center;
@@ -281,7 +281,7 @@ header{
     background: rgba(232,231,255,.09);
 }
 
-#filter label p::after{
+.filter label p::after{
     content: "";
     position: absolute;
     inset: 2px;
@@ -289,21 +289,21 @@ header{
     border-radius: 34%;
 }
 
-#filter label p span{
+.filter label p span{
     z-index: 1;
 }
 
-#filter input:checked + label p{
+.filter input:checked + label p{
     background: var(--bg-filter-check-color);
 }
 
-#filter label > span{
+.filter label > span{
     font-size: 13px;
     font-weight: 500;
     color: var(--font-pale-color);
 }
 
-#filter input:checked + label > span{
+.filter input:checked + label > span{
     font-weight: 700;
 }
 
@@ -325,16 +325,6 @@ header{
     bottom: 0;
     width: 2px;
     background-color: var(--bg-filter-uncheck-color);
-}
-
-[value="all"]:checked ~ #timeline li{
-    display: flex;
-}
-
-[value="releases"]:checked ~ #timeline ul li:not([data-category="releases"]), 
-[value="notes"]:checked ~ #timeline ul li:not([data-category="notes"]), 
-[value="others"]:checked ~ #timeline ul li:not([data-category="others"]) {
-    display: none;
 }
 
 #timeline li{
@@ -401,11 +391,12 @@ header{
 #scroll-box{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap: 4px;
-    max-width: 623px;
+    gap: 3px;
+    max-width: 621px;
     aspect-ratio: 1/1;
     margin-top: 1.5rem;
     overflow-y: scroll;
+    background-color: var(--bg-bubble-color);
 }
 
 #scroll-box::-webkit-scrollbar{
@@ -433,6 +424,52 @@ header{
     align-items: center;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+#github{
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 20px 1.5rem;
+    color: #7d8590;
+    font-size: 12px;
+}
+
+#github .filter{
+    gap: 50px;
+}
+
+#github h2{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#github li{
+    margin-bottom: 16px;
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid #30363d;
+}
+
+.repo-title a{
+    color: #2f81f7;
+}
+
+.repo-title a:hover{
+    text-decoration: underline;
+}
+
+.repo-desc{
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.repo-lang span{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 3px;
+    border: 1px solid rgba(255,255,255,0.2);;
+    border-radius: 50%;
 }
 
 #qanda{
