@@ -436,7 +436,7 @@ header{
     gap: 50px;
 }
 
-#github{
+#github > div{
     position: relative;
 }
 
