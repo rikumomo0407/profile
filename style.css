@@ -433,12 +433,12 @@ header{
 }
 
 #github .filter{
-    margin-bottom. 500px;
     gap: 50px;
 }
 
 #github > div{
     position: relative;
+    height: 500px;
 }
 
 #github section{
@@ -479,8 +479,12 @@ header{
     width: 12px;
     height: 12px;
     margin-right: 3px;
-    border: 1px solid rgba(255,255,255,0.2);;
+    border: 1px solid rgba(255,255,255,0.2);
     border-radius: 50%;
+}
+
+#popular-repo, #updated-repo{
+    display: none;
 }
 
 #qanda{
