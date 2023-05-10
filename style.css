@@ -445,6 +445,7 @@ header{
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
 }
 
 #github h2{
@@ -481,6 +482,10 @@ header{
     margin-right: 3px;
     border: 1px solid rgba(255,255,255,0.2);
     border-radius: 50%;
+}
+
+#recommend-repo{
+    display: block;
 }
 
 #popular-repo, #updated-repo{
