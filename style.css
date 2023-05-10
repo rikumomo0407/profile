@@ -436,6 +436,11 @@ header{
     gap: 50px;
 }
 
+#github section{
+    position: relative;
+    background-color: red;
+}
+
 #github h2{
     margin-top: 30px;
     margin-bottom: 20px;
