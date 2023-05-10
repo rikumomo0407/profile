@@ -475,7 +475,7 @@ header{
 #qanda{
     max-width: 780px;
     margin: 0 auto;
-    padding: 60px 1.5rem;
+    padding: 30px 1.5rem 100px;
 }
 
 #qanda ul{
