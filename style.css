@@ -430,8 +430,6 @@ header{
     max-width: 780px;
     margin: 0 auto;
     padding: 20px 1.5rem;
-    color: #7d8590;
-    font-size: 12px;
 }
 
 #github .filter{
@@ -448,6 +446,8 @@ header{
     padding: 16px;
     border-radius: 6px;
     border: 1px solid #30363d;
+    color: #7d8590;
+    font-size: 12px;
 }
 
 .repo-title a{
