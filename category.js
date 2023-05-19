@@ -51,14 +51,21 @@ window.addEventListener('DOMContentLoaded', function(){
         recommend.insertAdjacentHTML('beforeend', '<h2>Recommended repositories</h2><ol><li><div class=\"repo-title\"><a href=\"' + recommendList[0][1] + '\">' + recommendList[0][2] + '</a></div><div class=\"repo-desc\">' + recommendList[0][3] + '</div><div class=\"repo-lang\"><span style=\"background-color: ' + json_data.color[recommendList[0][4]] + ';\"></span>' + recommendList[0][4] + '</div></li><li><div class=\"repo-title\"><a href=\"' + recommendList[1][1] + '\">' + recommendList[1][2] + '</a></div><div class=\"repo-desc\">' + recommendList[1][3] + '</div><div class=\"repo-lang\"><span style=\"background-color: ' + json_data.color[recommendList[1][4]] + ';\"></span>' + recommendList[1][4] + '</div></li><li><div class=\"repo-title\"><a href=\"' + recommendList[2][1] + '\">' + recommendList[2][2] + '</a></div><div class=\"repo-desc\">' + recommendList[2][3] + '</div><div class=\"repo-lang\"><span style=\"background-color: ' + json_data.color[recommendList[2][4]] + ';\"></span>' + recommendList[2][4] + '</div></li></ol>');
         popular.insertAdjacentHTML('beforeend', '<h2>Popular repositories</h2><ol><li><div class=\"repo-title\"><a href=\"' + popularList[0][1] + '\">' + popularList[0][2] + '</a></div><div class=\"repo-desc\">' + popularList[0][3] + '</div><div class=\"repo-lang\"><span style=\"background-color: ' + json_data.color[popularList[0][4]] + ';\"></span>' + popularList[0][4] + '</div></li><li><div class=\"repo-title\"><a href=\"' + popularList[1][1] + '\">' + popularList[1][2] + '</a></div><div class=\"repo-desc\">' + popularList[1][3] + '</div><div class=\"repo-lang\"><span style=\"background-color: ' + json_data.color[popularList[1][4]] + ';\"></span>' + popularList[1][4] + '</div></li><li><div class=\"repo-title\"><a href=\"' + popularList[2][1] + '\">' + popularList[2][2] + '</a></div><div class=\"repo-desc\">' + popularList[2][3] + '</div><div class=\"repo-lang\"><span style=\"background-color: ' + json_data.color[popularList[2][4]] + ';\"></span>' + popularList[2][4] + '</div></li></ol>');
         updated.insertAdjacentHTML('beforeend', '<h2>Updated repositories</h2><ol><li><div class=\"repo-title\"><a href=\"' + updatedList[0][1] + '\">' + updatedList[0][2] + '</a></div><div class=\"repo-desc\">' + updatedList[0][3] + '</div><div class=\"repo-lang\"><span style=\"background-color: ' + json_data.color[updatedList[0][4]] + ';\"></span>' + updatedList[0][4] + '</div></li><li><div class=\"repo-title\"><a href=\"' + updatedList[1][1] + '\">' + updatedList[1][2] + '</a></div><div class=\"repo-desc\">' + updatedList[1][3] + '</div><div class=\"repo-lang\"><span style=\"background-color: ' + json_data.color[updatedList[1][4]] + ';\"></span>' + updatedList[1][4] + '</div></li><li><div class=\"repo-title\"><a href=\"' + updatedList[2][1] + '\">' + updatedList[2][2] + '</a></div><div class=\"repo-desc\">' + updatedList[2][3] + '</div><div class=\"repo-lang\"><span style=\"background-color: ' + json_data.color[updatedList[2][4]] + ';\"></span>' + updatedList[2][4] + '</div></li></ol>');
-        const parent = document.querySelector('#timeline ul');
+        const parent = document.querySelector('#timeline div');
+        let child;
         let filter = document.querySelectorAll('input[type="radio"]');
         let icon = "";
+        let year = "";
         for(let component of json_data.timeline){
             component.category == "releases" ? icon = ' 🔥' : component.category == "notes" ? icon = ' 📃' : icon = "";
-            parent.insertAdjacentHTML('beforeend', '<li><div class="dot"></div><div class="log"><time>' + component.date + '</time>' + icon + '<p class="bubble">' + component.content + '</p></div></li>');
+            if(component.date.slice(0, 4) != year){
+                year = component.date.slice(0, 4);
+                parent.insertAdjacentHTML('beforeend', '<section id=\"year-' + year + '\"><h2>' + year + '</h2><ul></ul></section>');
+                child = document.querySelector('#timeline #year-' + year + ' ul');
+            }
+            child.insertAdjacentHTML('beforeend', '<li><div class=\"dot\"></div><div class=\"log\"><time>' + component.date + '</time>' + icon + '<p class="bubble">' + component.content + '</p></div></li>');
         };
-        for (let target of filter) {
+        for(let target of filter){
             target.addEventListener('change', function (){
                 if(target.value == 'recommend' || target.value == 'popular' || target.value == 'updated'){
                     recommend.style.display = popular.style.display = updated.style.display = "none";
@@ -70,7 +77,12 @@ window.addEventListener('DOMContentLoaded', function(){
                     for(let component of json_data.timeline){
                         if(target.value == 'all' ||  target.value == component.category){
                             component.category == "releases" ? icon = ' 🔥' : component.category == "notes" ? icon = ' 📃' : icon = "";
-                            parent.insertAdjacentHTML('beforeend', '<li><div class="dot"></div><div class="log"><time>' + component.date + '</time>' + icon + '<p class="bubble">' + component.content + '</p></div></li>');
+                            if(component.date.slice(0, 4) != year){
+                                year = component.date.slice(0, 4);
+                                parent.insertAdjacentHTML('beforeend', '<section id=\"year-' + year + '\"><h2>' + year + '</h2><ul></ul></section>');
+                                child = document.querySelector('#timeline #year-' + year + ' ul');
+                            }
+                            child.insertAdjacentHTML('beforeend', '<li><div class=\"dot\"></div><div class=\"log\"><time>' + component.date + '</time>' + icon + '<p class="bubble">' + component.content + '</p></div></li>');
                         };
                     };
                 }
