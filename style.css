@@ -487,6 +487,8 @@ header{
 }
 
 .repo-lang span{
+    position: relative;
+    top: 1px;
     display: inline-block;
     width: 12px;
     height: 12px;
