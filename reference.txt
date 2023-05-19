@@ -1,5 +1,19 @@
+⚙参考サイト
+
 構成
 https://catnose.me/
 
 ダークモード
 https://qiita.com/whike_chan/items/3fff6d0c78fa74253d4d
+
+
+📃参考文献
+
+JSの動的実行
+https://qiita.com/w650/items/adb108649a0e2a86f334
+
+
+💻使用データ
+
+GitHubのプログラミング言語の色
+https://github.com/ozh/github-colors
