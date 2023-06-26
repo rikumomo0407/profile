@@ -13,6 +13,7 @@ body{
     --bg-filter-uncheck-color: rgba(232,231,255,.09);
     --bg-filter-check-color: linear-gradient(25deg,#e1689d,#4046ff);
     --bg-filter-dot-color: #4f536a;
+    --bg-filter-icon-color: rgb(73, 73, 73);
     --bg-repo-color: #22272e;
     --bg-qanda-answer-color: #5500ff;
     --border-repo-color: #30363d;
@@ -30,6 +31,7 @@ body{
     --bg-filter-uncheck-color: rgba(232, 231, 255, 0.5);
     --bg-filter-check-color: linear-gradient(25deg,#4ed0ff,#9b5efc);
     --bg-filter-dot-color: #f9f9ff;
+    --bg-filter-icon-color: rgb(200, 200, 200);
     --bg-repo-color: #fff;
     --bg-qanda-answer-color: #00aeff;
     --border-repo-color: #d0d7de;
@@ -397,7 +399,7 @@ header{
     content: '';
     bottom: -15px;
     right: 10px;
-    background-color: rgb(73, 73, 73);
+    background-color: var(--bg-filter-icon-color);
     border-radius: 50%;
     border: 2px solid var(--bg-color);
     z-index: 10;
@@ -567,6 +569,10 @@ header{
 #qanda label{
     display: inline-block;
     cursor: pointer;
+}
+
+#qanda .bubble{
+    margin-top: 1rem;
 }
 
 #answer{
