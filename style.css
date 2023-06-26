@@ -31,7 +31,7 @@ body{
     --bg-filter-uncheck-color: rgba(232, 231, 255, 0.5);
     --bg-filter-check-color: linear-gradient(25deg,#4ed0ff,#9b5efc);
     --bg-filter-dot-color: #f9f9ff;
-    --bg-filter-icon-color: rgb(200, 200, 200);
+    --bg-filter-icon-color: rgb(230, 230, 255);
     --bg-repo-color: #fff;
     --bg-qanda-answer-color: #00aeff;
     --border-repo-color: #d0d7de;
