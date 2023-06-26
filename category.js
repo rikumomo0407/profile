@@ -58,27 +58,27 @@ window.addEventListener('DOMContentLoaded', function(){
         popular.insertAdjacentHTML('beforeend', '<h2>Popular repositories</h2><ol><li><div class=\"repo-title\"><a href=\"' + popularList[0][1] + '\">' + popularList[0][2] + '</a></div><div class=\"repo-desc\">' + popularList[0][3] + '</div><div class=\"repo-lang\"><span style=\"background-color: ' + json_data.color[popularList[0][4]] + ';\"></span>' + popularList[0][4] + '</div></li><li><div class=\"repo-title\"><a href=\"' + popularList[1][1] + '\">' + popularList[1][2] + '</a></div><div class=\"repo-desc\">' + popularList[1][3] + '</div><div class=\"repo-lang\"><span style=\"background-color: ' + json_data.color[popularList[1][4]] + ';\"></span>' + popularList[1][4] + '</div></li><li><div class=\"repo-title\"><a href=\"' + popularList[2][1] + '\">' + popularList[2][2] + '</a></div><div class=\"repo-desc\">' + popularList[2][3] + '</div><div class=\"repo-lang\"><span style=\"background-color: ' + json_data.color[popularList[2][4]] + ';\"></span>' + popularList[2][4] + '</div></li></ol>');
         updated.insertAdjacentHTML('beforeend', '<h2>Updated repositories</h2><ol><li><div class=\"repo-title\"><a href=\"' + updatedList[0][1] + '\">' + updatedList[0][2] + '</a></div><div class=\"repo-desc\">' + updatedList[0][3] + '</div><div class=\"repo-lang\"><span style=\"background-color: ' + json_data.color[updatedList[0][4]] + ';\"></span>' + updatedList[0][4] + '</div></li><li><div class=\"repo-title\"><a href=\"' + updatedList[1][1] + '\">' + updatedList[1][2] + '</a></div><div class=\"repo-desc\">' + updatedList[1][3] + '</div><div class=\"repo-lang\"><span style=\"background-color: ' + json_data.color[updatedList[1][4]] + ';\"></span>' + updatedList[1][4] + '</div></li><li><div class=\"repo-title\"><a href=\"' + updatedList[2][1] + '\">' + updatedList[2][2] + '</a></div><div class=\"repo-desc\">' + updatedList[2][3] + '</div><div class=\"repo-lang\"><span style=\"background-color: ' + json_data.color[updatedList[2][4]] + ';\"></span>' + updatedList[2][4] + '</div></li></ol>');
         const parent = document.querySelector('#timeline div');
-        let child;
         let filter = document.querySelectorAll('input[type="radio"]');
-        let icon = "";
-        let year = "";
-        let counter = "";
+        let icon = '';
+        // let counter = "";
 
         //define function
         function sortTimeline(value){
             while(parent.firstChild){
                 parent.removeChild(parent.firstChild);
             }
-            year = "";
+            year = '';
+            date = '';
             for(let component of json_data.timeline){
                 if(value == 'all' || value == component.category){
-                    component.category == "releases" ? icon = ' 🔥' : component.category == "notes" ? icon = ' 📃' : icon = "";
+                    component.category == "releases" ? icon = ' 🔥' : component.category == "notes" ? icon = ' 📃' : icon = '';
                     if(component.date.slice(0, 4) != year){
                         year = component.date.slice(0, 4);
                         parent.insertAdjacentHTML('beforeend', '<section id=\"year-' + year + '\"><h2>' + year + '</h2><ul></ul></section>');
                         child = document.querySelector('#timeline #year-' + year + ' ul');
                     };
-                    child.insertAdjacentHTML('beforeend', '<li><div class=\"dot\"></div><div class=\"log\"><time>' + component.date + '</time>' + icon + '<p class="bubble">' + component.content + '</p></div></li>');
+                    child.insertAdjacentHTML('beforeend', '<li>' + (date != component.date.slice(5, 10) ? '<div class=\"dot\"></div>' : '') + '<div class=\"log\">' + (date != component.date.slice(5, 10) ? '<div class=\"date\"><time>' + component.date + '</time></div>' : '') + '<div class=\"bubble\">' + (icon != "" ? '<div class=\"icon\">' + icon + '</div>' : '') + component.content + '</div></div></li>');
+                    date = component.date.slice(5, 10);
                 };
             };
         };
