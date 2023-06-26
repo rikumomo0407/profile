@@ -69,10 +69,11 @@ input{
 }
 
 .bubble{
+    position: relative;
     font-weight: 400;
     font-size: .95rem;
     font-weight: 700;
-    margin-top: 1rem;
+    margin-bottom: .3rem;
     padding: 1.3rem 1.2rem;
     border-radius: 14px;
     color: var(--font-bubble-color);
@@ -302,6 +303,8 @@ header{
     background: var(--bg-filter-uncheck-color);
 }
 
+
+
 .filter label p::after{
     content: "";
     position: absolute;
@@ -354,7 +357,7 @@ header{
 }
 
 #timeline li:not(:first-child){
-    margin-top: 2.7rem;
+    margin-top: 1.5rem;
 }
 
 #timeline li:last-child::before{
@@ -385,8 +388,27 @@ header{
     padding-left: 32px;
 }
 
+.icon{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 27px;
+    position: absolute;
+    content: '';
+    bottom: -15px;
+    right: 10px;
+    background-color: rgb(73, 73, 73);
+    border-radius: 50%;
+    border: 2px solid var(--bg-color);
+    z-index: 10;
+}
+
 #timeline li time{
     color: var(--font-pale-color);
+}
+
+.date{
+    margin-bottom: 1rem;
 }
 
 #twitter{
