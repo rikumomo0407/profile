@@ -1,7 +1,9 @@
 window.addEventListener('DOMContentLoaded', function(){
+
+    //load json file from github server
     var prm=[];
     var json_data, repo_data;
-    prm[0] = new Promise(function(resolver){
+    prm[0] = new Promise(function(resolver){ //load data.json to "json_data"
         var xhr = new XMLHttpRequest();
         xhr.open('get',"https://raw.githubusercontent.com/rikumomo0407/profile/main/data.json");
         xhr.onload=function(){
@@ -10,7 +12,7 @@ window.addEventListener('DOMContentLoaded', function(){
         };
         xhr.send();
     });
-    prm[1] = new Promise(function(resolver){
+    prm[1] = new Promise(function(resolver){ //load data about repositories to "repo_data"
         var xhr = new XMLHttpRequest();
         xhr.open('get', "https://api.github.com/users/rikumomo0407/repos");
         xhr.onload=function(e){
@@ -19,6 +21,8 @@ window.addEventListener('DOMContentLoaded', function(){
         };
         xhr.send();
     });
+
+    //extract obective data from "repo_data" to 3 lists
     Promise.all(prm).then(function(){
         let recommendList = [[null, null], [null, null], [null, null]];
         let popularList = [[null, null], [null, null], [null, null]];
@@ -45,6 +49,8 @@ window.addEventListener('DOMContentLoaded', function(){
                 };
             };
         };
+
+        //define variables
         const recommend = document.getElementById('recommend-repo');
         const popular = document.getElementById('popular-repo');
         const updated = document.getElementById('updated-repo');
@@ -56,35 +62,36 @@ window.addEventListener('DOMContentLoaded', function(){
         let filter = document.querySelectorAll('input[type="radio"]');
         let icon = "";
         let year = "";
-        for(let component of json_data.timeline){
-            component.category == "releases" ? icon = ' 🔥' : component.category == "notes" ? icon = ' 📃' : icon = "";
-            if(component.date.slice(0, 4) != year){
-                year = component.date.slice(0, 4);
-                parent.insertAdjacentHTML('beforeend', '<section id=\"year-' + year + '\"><h2>' + year + '</h2><ul></ul></section>');
-                child = document.querySelector('#timeline #year-' + year + ' ul');
+        let counter = "";
+
+        //define function
+        function sortTimeline(value){
+            while(parent.firstChild){
+                parent.removeChild(parent.firstChild);
             }
-            child.insertAdjacentHTML('beforeend', '<li><div class=\"dot\"></div><div class=\"log\"><time>' + component.date + '</time>' + icon + '<p class="bubble">' + component.content + '</p></div></li>');
+            year = "";
+            for(let component of json_data.timeline){
+                if(value == 'all' || value == component.category){
+                    component.category == "releases" ? icon = ' 🔥' : component.category == "notes" ? icon = ' 📃' : icon = "";
+                    if(component.date.slice(0, 4) != year){
+                        year = component.date.slice(0, 4);
+                        parent.insertAdjacentHTML('beforeend', '<section id=\"year-' + year + '\"><h2>' + year + '</h2><ul></ul></section>');
+                        child = document.querySelector('#timeline #year-' + year + ' ul');
+                    };
+                    child.insertAdjacentHTML('beforeend', '<li><div class=\"dot\"></div><div class=\"log\"><time>' + component.date + '</time>' + icon + '<p class="bubble">' + component.content + '</p></div></li>');
+                };
+            };
         };
+
+        //operate filter
+        sortTimeline('all')
         for(let target of filter){
             target.addEventListener('change', function (){
                 if(target.value == 'recommend' || target.value == 'popular' || target.value == 'updated'){
                     recommend.style.display = popular.style.display = updated.style.display = "none";
                     target.value == 'recommend' ? recommend.style.display = "block" : target.value == 'popular' ? popular.style.display = "block" : updated.style.display = "block";
                 }else{
-                    while(parent.firstChild){
-                        parent.removeChild(parent.firstChild);
-                    }
-                    for(let component of json_data.timeline){
-                        if(target.value == 'all' ||  target.value == component.category){
-                            component.category == "releases" ? icon = ' 🔥' : component.category == "notes" ? icon = ' 📃' : icon = "";
-                            if(component.date.slice(0, 4) != year){
-                                year = component.date.slice(0, 4);
-                                parent.insertAdjacentHTML('beforeend', '<section id=\"year-' + year + '\"><h2>' + year + '</h2><ul></ul></section>');
-                                child = document.querySelector('#timeline #year-' + year + ' ul');
-                            }
-                            child.insertAdjacentHTML('beforeend', '<li><div class=\"dot\"></div><div class=\"log\"><time>' + component.date + '</time>' + icon + '<p class="bubble">' + component.content + '</p></div></li>');
-                        };
-                    };
+                    sortTimeline(target.value)
                 }
             });
         };
