@@ -28,8 +28,8 @@ body{
     --bg-header-color: rgb(154, 213, 239, 0.5);
     --bg-index-color: rgba(100, 100, 100, 0.5);
     --bg-bubble-color: #fff;
-    --bg-filter-uncheck-color: rgba(232, 231, 255, 0.5);
-    --bg-filter-check-color: linear-gradient(25deg, #f13f79, #ff6922);
+    --bg-filter-uncheck-color: rgba(240, 240, 255, 0.5);
+    --bg-filter-check-color: linear-gradient(25deg, #f13f79, #ffd700);
     --bg-filter-dot-color: #f9f9ff;
     --bg-filter-icon-color: rgb(230, 230, 255);
     --bg-repo-color: #fff;
