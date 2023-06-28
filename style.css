@@ -614,13 +614,13 @@ footer{
 	align-items: center;
     text-align: center;
     margin-top: 50px;
-    color: gray;
+    color: var(--font-pale-color);
     background-image: url("images/gif/IMG_0474.jpeg");
     background-repeat: no-repeat;
 }
 
 footer p{
-    margin: 15px 20px 20px 20px;
+    margin: 25px 20px 20px 15px;
 }
 
 @media screen and (max-width: 500px){
