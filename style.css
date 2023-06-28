@@ -614,7 +614,7 @@ footer{
 	align-items: center;
     text-align: center;
     margin-top: 50px;
-    color: var(--font-pale-color);
+    color: #fff;
     background-image: url("images/gif/IMG_0474.jpeg");
     background-repeat: no-repeat;
 }
