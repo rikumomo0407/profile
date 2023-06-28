@@ -613,10 +613,9 @@ footer{
     justify-content: center;
 	align-items: center;
     text-align: center;
-    margin-top: 50px;
-    padding: 20px;
+    margin-top: 70px;
     color: var(--font-pale-color);
-    background-image: url("images/gif/");
+    background-image: url("images/gif/IMG_0474.jpeg");
 }
 
 @media screen and (max-width: 500px){
