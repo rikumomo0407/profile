@@ -607,6 +607,7 @@ input[type="checkbox"]:checked ~ #answer{
 }
 
 footer{
+	position: relative;
     display: flex;
     justify-content: center;
 	align-items: center;
@@ -615,6 +616,14 @@ footer{
     padding: 20px;
     color: var(--font-pale-color);
 }
+
+#grass{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	
 
 @media screen and (max-width: 500px){
     #container{
