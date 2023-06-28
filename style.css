@@ -617,7 +617,6 @@ footer{
     color: var(--font-pale-color);
     background-image: url("images/gif/IMG_0474.jpeg");
     background-repeat: no-repeat;
-    background-color: green;
 }
 
 @media screen and (max-width: 500px){
