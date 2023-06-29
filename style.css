@@ -606,6 +606,13 @@ input[type="checkbox"]:checked ~ #answer{
     color: #968cff;
 }
 
+#rocket{
+	width: 100%;
+	padding-right: 50px;
+	text-align: right;
+	margin-top: 50px;
+}
+
 footer{
 	position: relative;
     width: 100%;
@@ -613,7 +620,6 @@ footer{
     justify-content: center;
 	align-items: center;
     text-align: center;
-    margin-top: 50px;
     color: var(--font-pale-color);
     background-image: url("images/gif/IMG_0474.jpeg");
     background-repeat: no-repeat;
