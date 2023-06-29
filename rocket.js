@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', function(){
     function scroll_top() {
         pagetop_btn.style.position = "fixed";
         window.scroll({ top: 0, behavior: "smooth" });
-        pagetop_btn.animate({opacity: [1, 0], transform: ["translateY(900px)", "translateY(-1000px)"]}, 1000);
+        pagetop_btn.animate({opacity: [1, 0], transform: ["translateY(800px)", "translateY(-1300px)"]}, 1200);
         pagetop_btn.style.height = "auto";
     }
     window.addEventListener("scroll", scroll_event);
