@@ -27,19 +27,19 @@
     <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/rikumomo0407"/>
     <meta name="theme-color" content="#FFFFFF">
 </head>
-<body>
+<body id="pagetop">
     <script src="menu.js"></script>
     <header>
         <div id="menu">
             <input type="checkbox" id="menu-button">
             <label id="menu-label" for="menu-button">
-                <div id="menuicon"><img src="images/menu.svg"></div>
+                <div id="menuicon"><img src="images/svg/menu.svg"></div>
                 <div id="usericon"><img src="https://avatars.githubusercontent.com/rikumomo0407"></div>
                 <div id="username"><span>rikumomo0407</span></div>
             </label>
             <div id="index">
                 <ul>
-                    <li><a href="https://rikumomo0407.github.io/profile">TOP</a></li>
+                    <li><a href="#pagetop">TOP</a></li>
                     <li><a href="#timeline">TIMELINE</a></li>
                     <li><a href="#twitter">TWITTER</a></li>
                     <li><a href="#instagram">INSTAGRAM</a></li>
@@ -62,13 +62,13 @@
         </div>
        	<div id="sns">
             <div id="container">
-       			<div id="twitter-icon"><a href="https://twitter.com/rikumomo0407"><img src="images/twitter.svg" alt="twitter"></a></div>
-       			<div id="instagram-icon"><a href="https://www.instagram.com/rikumomo0407"><img src="images/instagram.svg" alt="instagram"></a></div>
-       			<div id="github-icon"><a href="https://github.com/rikumomo0407"><img src="images/github.svg" alt="github"></a></div>
-                <div id="gmail-icon"><a href="https://mail.google.com/mail/?view=cm&to=rikumomo0407@gmail.com"><img src="images/gmail.svg" alt="gmail"></a></div>
+       			<div id="twitter-icon"><a href="https://twitter.com/rikumomo0407"><img src="images/svg/twitter.svg" alt="twitter"></a></div>
+       			<div id="instagram-icon"><a href="https://www.instagram.com/rikumomo0407"><img src="images/svg/instagram.svg" alt="instagram"></a></div>
+       			<div id="github-icon"><a href="https://github.com/rikumomo0407"><img src="images/svg/github.svg" alt="github"></a></div>
+                <div id="gmail-icon"><a href="https://mail.google.com/mail/?view=cm&to=rikumomo0407@gmail.com"><img src="images/svg/gmail.svg" alt="gmail"></a></div>
             </div>
        	</div>
-        <div id="scroll"><img src="images/scroll.svg"></div>
+        <div id="scroll"><img src="images/svg/scroll.svg"></div>
     </div>
     <script src="category.js"></script>
     <div id="timeline">
@@ -84,6 +84,8 @@
             <label for="others"><p><span>⚡</span></p><span>Others</span></label>
         </nav>
         <div></div>
+        <input type="radio" name="more_button" value="show_more" id="show_more">
+        <label for="show_more">Show more</label>
     </div>
     <div id="twitter">
         <h1>Twitter</h1>
@@ -147,8 +149,9 @@
         </ul>
         <div id="message">Click <a href="https://mail.google.com/mail/?view=cm&to=rikumomo0407@gmail.com&su=Qestion-Wallpaper-Searcher">here</a> for more questions</div>
     </div>
-    <div id="rocket"><img src="images/gif/Rocket.svg"></div>
     <footer>
+        <script src="rocket.js"></script>
+        <div id="rocket"><img src="images/gif/rocket.png" width="74" height="178"></div>
         <p>© Copyright 2023 rikumomo0407 All rights reserved.</p>
     </footer>
 </body>
