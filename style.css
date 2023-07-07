@@ -427,6 +427,7 @@ header{
 #twitter{
     margin-top: 30px;
     padding: 20px 2rem;
+    text-align: center;
 }
 
 #twitter-setting{
@@ -558,6 +559,7 @@ header{
 #threads{
     margin-top: 30px;
     padding: 20px 2rem;
+    text-align: center;
 }
 
 #threads-setting{
