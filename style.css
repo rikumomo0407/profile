@@ -555,12 +555,12 @@ header{
     display: none;
 }
 
-#thread{
+#threads{
     margin-top: 30px;
     padding: 20px 2rem;
 }
 
-#thread div{
+#threads div{
     display: flex;
     justify-content: center;
     align-items: center;
