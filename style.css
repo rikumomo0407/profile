@@ -560,7 +560,7 @@ header{
     padding: 20px 2rem;
 }
 
-#threads div{
+#threads-setting{
     display: flex;
     justify-content: center;
     align-items: center;
