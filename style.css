@@ -555,6 +555,25 @@ header{
     display: none;
 }
 
+#thread{
+    margin-top: 30px;
+    padding: 20px 2rem;
+}
+
+#thread div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+#thread img{
+    width: 80%;
+    max-width: 500px;
+    margin: 30px 0;
+    border-radius: 15%;
+}
+
 #qanda{
     max-width: 780px;
     margin: 0 auto;
