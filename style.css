@@ -572,6 +572,7 @@ header{
     width: 100%;
     max-width: 500px;
     border-radius: 5%;
+    padding: 10px;
 }
 
 #qanda{
