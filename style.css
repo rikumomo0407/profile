@@ -568,7 +568,7 @@ header{
     align-items: center;
 }
 
-#threads img{
+#threads a{
     width: 100%;
     max-width: 500px;
     border-radius: 10%;
