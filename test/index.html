@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <title>【解決済】Mac初期化時に現れるエラー「-1008F」の解決方法</title>   
+    <script type="module">
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="rikumomo0407's profile site.">
+    <meta property="og:title" content="rikumomo0407's profile">
+    <meta property="og:description" content="rikumomo0407's profile site.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/rikumomo0407">
+    <meta property="og:image:alt" content="rikumomo0407's icon">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rikumomo0407.github.io/profile">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@rikumomo0407" />
+    <meta name="twitter:title" content="プロフィールサイトを開設しました" />
+    <meta name="twitter:description" content="rikumomo0407のプロフィールサイトです。" />
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/rikumomo0407" />
+    <link rel="canonical" href="https://rikumomo0407.github.io/profile">
+    <link rel="icon" href="https://avatars.githubusercontent.com/rikumomo0407">
+    <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/rikumomo0407"/>
+    <meta name="theme-color" content="#FFFFFF">
+</head>
+<body id="pagetop">
+    <script src="menu.js"></script>
+    <header>
+        <div id="menu">
+            <input type="checkbox" id="menu-button">
+            <label id="menu-label" for="menu-button">
+                <div id="menuicon"><img src="images/svg/menu.svg"></div>
+                <div id="usericon"><img src="https://avatars.githubusercontent.com/rikumomo0407"></div>
+                <div id="username"><span>rikumomo0407</span></div>
+            </label>
+            <div id="index">
+                <ul>
+                    <li><a href="#pagetop">TOP</a></li>
+                    <li><a href="#timeline">TIMELINE</a></li>
+                    <li><a href="#twitter">TWITTER</a></li>
+                    <li><a href="#instagram">INSTAGRAM</a></li>
+                    <li><a href="#github">GITHUB</a></li>
+                    <li><a href="#threads">THREADS</a></li>
+                    <li><a href="#qanda">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="darkmode">
+            <script src="darkmode.js"></script>
+            <input type="checkbox" id="mode-button">
+            <label id="rotate" for="mode-button"></label>
+        </div>
+    </header>
+    <article>
+        <h1>【解決済】Mac初期化時に現れるエラー「-1008F」の解決方法</h1>
+        <!-- <img src="images/elements/Beating Heart.png"> -->
+        <div>中古で購入したMacBook Pro 2019の挙動が色々とおかしかったので、初期化することにしたのだが、インターネット接続画面で「-1008F」というエラーが発生し詰んでしまった。<br>その後一ヶ月ほど奮闘し、とある方法で解決することができたので、共有しようと思う。</div>
+        <div><a href="https://retrobanner.net/"><img src="images/elements/ads.jpeg" alt="広告"></a></div>
+        <div>初期化のためにMacBook内のハードディスクを削除したあと、再起動するとWiFiの設定画面がでてきたので、自宅のWiFiに接続すると地球儀のイラストが周り出した。と思ったらその数分後に以下の画像のエラーコード「-1008F」が表示された。</div>
+        <div><img src="images/elements/error.jpeg" alt="エラー「-1008F」が表示される"></div>
+        <div>仕方なく一度Macの電源を落とし、再起動すると...またインターネット接続画面から始まった。この後何度試してみてもエラー。私はここで詰んでしまい、解決するのにかなりの時間を要してしまった。<br>この記事を見て、エラーコード「-1008F」で時間を無駄にする人がこれ以上出ないようにする為にも、調べてわかったいくつかの解決方法とその手順を記していく。</div>
+        <h2>1. Macを探すをオフにする。</h2>
+        <div><img src="images/elements/find-icon.png" alt="「探す」アプリのアイコン"></div>
+        <div>まず調べて出てきたのが、「探す」アプリでMacBookが連携されている時にこのバグが発生するという報告だ。iPhoneにプリインストールされている。このアプリからMacBookとの連携を解除してエラーを突破できたという記事もいくつかあったので試してみたが、残念ながら私のMacBookでは効果が見られなかった。</div>
+        <div><img src="images/elements/find-iphone.jpg" alt="iPhoneの「探す」アプリでMacBookを解除している"></div>
+        <div>また、ウェブサイトの<a href="https://www.icloud.com/find/">iPhoneを探す</a>からも解除してみたが、変化は見られなかった。</div>
+        <div><img src="images/elements/find-pc.png" alt="ブラウザの「探す」サイトでMacBookを解除している"></div>
+        <div>実は私のMacBookは中古で購入したものなので、前の使用者が「探す」を解除していなかったのかもしれない。</div>
+        <h2>2. 別のWiFiに切り替える。</h2>
+        <div><img src="images/elements/internet.jpg" alt="デザリングのイメージ"></div>
+        <div>これまで家のWiFiだけで試してきたが、どうやらエラーになるWiFiとならないWiFiがある？ようで、他の人の家のWiFiやスマホのデザリングを使うと上手くいった人がいるようだったので試してみた。<br>しかし結果は家のWiFiの時と何も変わらず、有線で接続してもエラーは治らなかった。</div>
+        <h2>3. macOS復旧から起動する。</h2>
+        <div><img src="images/elements/recovery-mode.png" alt="リカバリーモードの画面"></div>
+        <div><a>Apple公式サイト</a>に「option + command + R」を押して起動するとOS復旧画面から始まるとあったので試してみた。がやはりインターネット接続画面しか表示されなかった。</div>
+        <h2>4. Optionキーを押しながら起動する。</h2>
+        <div>もう修理に出すしかないのかと思っていたその時、海外のエラー「-1008F」を解説している<a href="https://youtu.be/BBp89AqV3jI">Youtube動画</a>を見つけた。この動画にエラー「-1008F」についてのコメントが沢山あり、まだ試していない方法がいくつかあったので全て試してみることにした。すると、ある人のコメントの通りにしたことで、ついにエラーを回避することができた。下に私が解決できた方法を記そうと思う。</div>
+        <h3>1 - MacBookの電源をオフにする。</h3>
+        <h3>2 - オプションキーを長押ししながら電源をつける。</h3>
+        <h3>3 - 地球儀のマークが消えた状態もしくは青色のアイコンが出てきた状態で始まるのでそのままインターネットに接続する。</h3>
+        <h3>4 - 接続が開始されたら、すぐに「option + command + R」を押す。(気持ち長めに)</h3>
+        <div>2、3回失敗しましたが何度かあったが、この操作に加えインターネットを何度か切り替えているとエラーにならず無事に初期化に成功した。コツはオプションキーをネットのパスワード入力時まで長押ししておくことと、入力した直後から「option + command + R」を押すと上手くいった。optionを長押ししても白黒の地球儀が表示されたインターネット接続画面から始まる場合は、原因がわからないので最も確実な次の方法を試すといいだろう。</div>
+        <h2>最後に</h2>
+        <div></div>
+    </article>
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+    <script src="good.js"></script>
+    <div id="reaction">
+        <div>&#92;&nbsp;&nbsp;&nbsp;この記事にいいねする&nbsp;&nbsp;&nbsp;/</div>
+        <input type="checkbox" id="good">
+        <label for="good" id="good-button"><img src="images/png/thumbs_up_3d_default.png"></label>
+    </div>
+    <div id="share">
+        <a id="twitter" href=""><img src="images/svg/twitter.svg"></a>
+        <a id="facebook" href=""><img src="images/svg/facebook-f.svg"></a>
+        <a id="hatena" href=""><img src="images/svg/hatenabookmark_symbolmark.png"></a>
+        <a id="pocket" href=""><img src="images/svg/get-pocket.svg"></a>
+        <a id="line" href=""><img src="images/svg/line.svg"></a>
+    </div>
+    <div id="ads-list">
+        <div class="ad-box"><a href=""><img src="images/elements/ads-list-1.png" alt="広告">ずばりOCNモバイルONE</a></div>
+        <div class="ad-box"><a href=""><img src="images/elements/ads-list-2.jpeg" alt="広告">コスパよく広告配信ができるヤフーの広告のバナーデザイン</a></div>
+        <div class="ad-box"><a href=""><img src="images/elements/ads-list-3.jpeg" alt="広告">心の絆でパックをつなげっ!! プラオレ!SMILE PRINCESS</a></div>
+        <div class="ad-box"><a href=""><img src="images/elements/ads-list-4.gif" alt="広告">人間さん 私に…会いに来てくれたの？オトギフロンティア</a></div>
+        <div class="ad-box"><a href=""><img src="images/elements/ads-list-5.jpeg" alt="広告">NUTRILITE 善玉菌は、腸への「定着力」で選びませんか？</a></div>
+        <div class="ad-box"><a href=""><img src="images/elements/ads-list-6.png" alt="広告">SONY XPERIA 5Ⅲ / XPERIA 1Ⅲ</a></div>
+    </div>
+    <div id="top">
+        <div id="profile-icon">
+            <img src="https://avatars.githubusercontent.com/rikumomo0407">
+            <p>rikumomo0407</p>
+            <p id="description">rikumomo0407 is a developer in Nitkit.</p>
+        </div>
+    </div>
+    <script src="category.js"></script>
+    <div id="timeline">
+        <h1>Timeline</h1>
+        <nav class="filter">
+            <input type="radio" name="filter_button" value="all" id="all" checked>
+            <label for="all"><p><span><img src="images/png/sparkles_3d.png" width="41px"></span></p><span>All</span></label>
+            <input type="radio" name="filter_button" value="releases" id="releases">
+            <label for="releases"><p><span><img src="images/png/partying_face_3d.png" width="41px"></span></p><span>Releases</span></label>
+            <input type="radio" name="filter_button" value="notes" id="notes">
+            <label for="notes"><p><span><img src="images/png/memo_3d.png" width="41px"></span></p><span>Notes</span></label>
+            <input type="radio" name="filter_button" value="others" id="others">
+            <label for="others"><p><span><img src="images/png/moai_3d.png" width="41px"></span></p><span>Others</span></label>
+        </nav>
+        <div></div>
+        <input type="radio" name="more_button" value="show_more" id="show_more">
+        <label for="show_more">Show more</label>
+    </div>
+    <footer>
+        <script src="rocket.js"></script>
+        <div id="rocket"><img src="images/png/rocket_3d.png" height="105px"></div>
+        <p>© Copyright 2023 rikumomo0407 All rights reserved.</p>
+    </footer>
+</body>
+</html>
