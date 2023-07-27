@@ -67,7 +67,7 @@ h2{
 }
 
 h3{
-    margin: 0 2rem 1rem;
+    margin: 10px 15px;
 }
 
 input{
@@ -170,12 +170,12 @@ header{
 article{
     width: 100%;
     max-width: 900px;
-    margin: 0 auto;
-    padding: 50px 2rem 0;
+    margin: 0 auto 50px;
+    padding: 0 10px;
 }
 
 article div{
-    margin-bottom: 30px;
+    margin: 30px 0;
 }
 
 article img{
