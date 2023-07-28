@@ -41,6 +41,13 @@ body{
     --font-bubble-color: #33374a;
 }
 
+.gradation {
+  background: linear-gradient(90deg, #4158D0, #C850C0 30%, #FFCC70);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 a{
     color: #fff;
     text-decoration: none;
@@ -54,7 +61,6 @@ ul, ol{
 }
 
 h1{
-    margin-top: 6rem;
     font-size: 2.2rem;
     text-align: center;
     margin-bottom: 32px;
@@ -121,7 +127,7 @@ header{
 
 #username{
     margin-left: 10px;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 500;
 }
 
@@ -170,11 +176,11 @@ header{
 #content{
     width: 100%;
     max-width: 900px;
-    margin: 0 auto 50px;
-    padding: 0 10px;
+    margin: 6rem auto 50px;
+    padding: 0 20px;
 }
 
-#notes-info{
+#note-info{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -182,25 +188,24 @@ header{
     font-weight: 500;
 }
 
-#notes-info div{
+#note-info div{
     display: flex;
     align-items: center;
-    margin: 2px 10px;
+    margin: 10px 10px;
 }
 
-#notes-info img{
+#headline img{
     width: 30px;
     margin-right: 10px;
-    border-radius: 50%;
 }
 
 article div{
     margin: 30px 0;
 }
 
-article .image img{
+article img{
+    max-height: 500px;
     margin: 0 auto;
-    max-height: 600px;
 }
 
 article .ad{
@@ -372,7 +377,7 @@ article h2{
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
-    padding: 50px 2rem 0;
+    padding: 50px 1rem 0;
 }
 
 .ad-box{

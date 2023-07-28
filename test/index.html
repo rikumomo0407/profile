@@ -34,8 +34,8 @@
             <input type="checkbox" id="menu-button">
             <label id="menu-label" for="menu-button">
                 <div id="menuicon"><img src="images/svg/menu.svg"></div>
-                <div id="usericon"><img src="https://avatars.githubusercontent.com/rikumomo0407"></div>
-                <div id="username"><span>rikumomo0407</span></div>
+                <!-- <div id="usericon"><img src="images/png/memo_3d.png"></div> -->
+                <div id="username"><span class="gradation">Notes</span></div>
             </label>
             <div id="index">
                 <ul>
@@ -56,12 +56,13 @@
         </div>
     </header>
     <div id="content">
-        <h1>Mac初期化時に現れるエラー「-1008F」の解決方法</h1>
-        <div id="notes-info">
-            <div>2023/7/27</div>
-            <div><img src="https://avatars.githubusercontent.com/rikumomo0407"><span>rikumomo0407</span></div>
-            <div><img src="images/png/eyes_3d.png"><span>14502</span></div>
-            <div><img src="images/png/thumbs_up_3d_default.png"><span>362</span></div>
+        <div id="headline">
+            <h1>Mac初期化時に現れるエラー「-1008F」の解決方法</h1>
+            <div id="note-info">
+                <div><img src="images/png/partying_face_3d.png"><time>2023/7/27</time></div>
+                <div><img src="images/png/eyes_3d.png"><span>14502</span></div>
+                <div><img src="images/png/thumbs_up_3d_default.png"><span>362</span></div>
+            </div>
         </div>
         <article>
             <div>中古で購入したMacBook Pro 2019の挙動が色々とおかしかったので、初期化することにしたのだが、インターネット接続画面で「-1008F」というエラーが発生し詰んでしまった。<br>その後一ヶ月ほど奮闘し、とある方法で解決することができたので、共有しようと思う。</div>
@@ -70,7 +71,7 @@
             <div class="image"><img src="images/elements/error.jpeg" alt="エラー「-1008F」が表示される"></div>
             <div>仕方なく一度Macの電源を落とし、再起動すると...またインターネット接続画面から始まった。この後何度試してみてもエラー。私はここで詰んでしまい、解決するのにかなりの時間を要してしまった。<br>この記事を見て、エラーコード「-1008F」で時間を無駄にする人がこれ以上出ないようにする為にも、調べてわかったいくつかの解決方法とその手順を記していく。</div>
             <h2>1. Macを探すをオフにする。</h2>
-            <div class="image"><img src="images/elements/find-icon.png" alt="「探す」アプリのアイコン"></div>
+            <div class="image"><img src="images/elements/find-icon.png" width="200px" alt="「探す」アプリのアイコン"></div>
             <div>まず調べて出てきたのが、「探す」アプリでMacBookが連携されている時にこのバグが発生するという報告だ。iPhoneにプリインストールされている。このアプリからMacBookとの連携を解除してエラーを突破できたという記事もいくつかあったので試してみたが、残念ながら私のMacBookでは効果が見られなかった。</div>
             <div class="image"><img src="images/elements/find-iphone.jpg" alt="iPhoneの「探す」アプリでMacBookを解除している"></div>
             <div>また、ウェブサイトの<a href="https://www.icloud.com/find/">iPhoneを探す</a>からも解除してみたが、変化は見られなかった。</div>
@@ -83,6 +84,7 @@
             <div class="image"><img src="images/elements/recovery-mode.png" alt="リカバリーモードの画面"></div>
             <div><a>Apple公式サイト</a>に「option + command + R」を押して起動するとOS復旧画面から始まるとあったので試してみた。がやはりインターネット接続画面しか表示されなかった。</div>
             <h2>4. Optionキーを押しながら起動する。</h2>
+            <div class="image"><img src="images/png/desktop-wallpaper-ultrawide-monitor-ultra-wide-monitor.jpg"></div>
             <div>もう修理に出すしかないのかと思っていたその時、海外のエラー「-1008F」を解説している<a href="https://youtu.be/BBp89AqV3jI">Youtube動画</a>を見つけた。この動画にエラー「-1008F」についてのコメントが沢山あり、まだ試していない方法がいくつかあったので全て試してみることにした。すると、ある人のコメントの通りにしたことで、ついにエラーを回避することができた。下に私が解決できた方法を記そうと思う。</div>
             <h3>1 - MacBookの電源をオフにする。</h3>
             <h3>2 - オプションキーを長押ししながら電源をつける。</h3>
@@ -98,14 +100,14 @@
     <div id="reaction">
         <div>&#92;&nbsp;&nbsp;&nbsp;この記事にいいねする&nbsp;&nbsp;&nbsp;/</div>
         <input type="checkbox" id="good">
-        <label for="good" id="good-button"><img src="images/png/thumbs_up_3d_default.png"></label>
+        <label for="good" id="good-button"><img src="images/png/thumbs_up_3d_default.png" alt="いいねボタン"></label>
     </div>
     <div id="share">
-        <a id="twitter" href=""><img src="images/svg/twitter.svg"></a>
-        <a id="facebook" href=""><img src="images/svg/facebook-f.svg"></a>
-        <a id="hatena" href=""><img src="images/svg/hatenabookmark_symbolmark.png"></a>
-        <a id="pocket" href=""><img src="images/svg/get-pocket.svg"></a>
-        <a id="line" href=""><img src="images/svg/line.svg"></a>
+        <a id="twitter" href="https://twitter.com/share?url=https://github.com/&text=Mac初期化時に現れるエラー「-1008F」の解決方法"><img src="images/svg/twitter.svg" alt="twitterのアイコン"></a>
+        <a id="facebook" href="https://www.facebook.com/share.php?u=https://github.com/&t=Mac初期化時に現れるエラー「-1008F」の解決方法"><img src="images/svg/facebook-f.svg" alt="facebookのアイコン"></a>
+        <a id="hatena" href="http://b.hatena.ne.jp/entry/https://github.com/"><img src="images/svg/hatenabookmark_symbolmark.png" alt="はてなブログのアイコン"></a>
+        <a id="pocket" href="http://getpocket.com/edit?url=https://github.com/&title=Mac初期化時に現れるエラー「-1008F」の解決方法"><img src="images/svg/get-pocket.svg" alt="ポケットのアイコン"></a>
+        <a id="line" href="https://social-plugins.line.me/lineit/share?url=https://github.com/"><img src="images/svg/line.svg" alt="lineのアイコン"></a>
     </div>
     <div id="ads-list">
         <div class="ad-box"><a href=""><img src="images/elements/ads-list-1.png" alt="広告">ずばりOCNモバイルONE</a></div>
