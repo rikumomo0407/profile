@@ -28,12 +28,12 @@
     <meta name="theme-color" content="#FFFFFF">
 </head>
 <body id="pagetop">
-    <script src="menu.js"></script>
-    <header>
+    <script src="header.js"></script>
+    <header id="header">
         <div id="menu">
             <input type="checkbox" id="menu-button">
             <label id="menu-label" for="menu-button">
-                <div id="menuicon"><img src="images/svg/menu.svg"></div>
+                <!-- <div id="menuicon"><img src="images/svg/menu.svg"></div> -->
                 <!-- <div id="usericon"><img src="images/png/memo_3d.png"></div> -->
                 <div id="username"><span class="gradation">Notes</span></div>
             </label>
@@ -50,7 +50,6 @@
             </div>
         </div>
         <div id="darkmode">
-            <script src="darkmode.js"></script>
             <input type="checkbox" id="mode-button">
             <label id="rotate" for="mode-button"></label>
         </div>
@@ -59,7 +58,7 @@
         <div id="headline">
             <h1>Mac初期化時に現れるエラー「-1008F」の解決方法</h1>
             <div id="note-info">
-                <div><img src="images/png/partying_face_3d.png"><time>2023/7/27</time></div>
+                <div><img src="images/png/calendar_3d.png"><time>2023/7/27</time></div>
                 <div><img src="images/png/eyes_3d.png"><span>14502</span></div>
                 <div><img src="images/png/thumbs_up_3d_default.png"><span>362</span></div>
             </div>
@@ -84,7 +83,6 @@
             <div class="image"><img src="images/elements/recovery-mode.png" alt="リカバリーモードの画面"></div>
             <div><a>Apple公式サイト</a>に「option + command + R」を押して起動するとOS復旧画面から始まるとあったので試してみた。がやはりインターネット接続画面しか表示されなかった。</div>
             <h2>4. Optionキーを押しながら起動する。</h2>
-            <div class="image"><img src="images/png/desktop-wallpaper-ultrawide-monitor-ultra-wide-monitor.jpg"></div>
             <div>もう修理に出すしかないのかと思っていたその時、海外のエラー「-1008F」を解説している<a href="https://youtu.be/BBp89AqV3jI">Youtube動画</a>を見つけた。この動画にエラー「-1008F」についてのコメントが沢山あり、まだ試していない方法がいくつかあったので全て試してみることにした。すると、ある人のコメントの通りにしたことで、ついにエラーを回避することができた。下に私が解決できた方法を記そうと思う。</div>
             <h3>1 - MacBookの電源をオフにする。</h3>
             <h3>2 - オプションキーを長押ししながら電源をつける。</h3>
