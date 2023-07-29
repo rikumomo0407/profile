@@ -46,6 +46,8 @@ body{
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: Brush Script MT;
+  font-size: 34px;
 }
 
 a{
@@ -101,7 +103,19 @@ header{
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     z-index: 10;
+
+    transform: translateY(0);
+    transition: transform .4s ease;
 }
+
+
+
+.header--unpinned {
+    -webkit-transform: translateY(-150%);
+    transform: translateY(-150%);
+}
+
+
 
 #menu-label{
     display: flex;
@@ -377,7 +391,7 @@ article h2{
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
-    padding: 50px 1rem 0;
+    padding: 50px .5rem 0;
 }
 
 .ad-box{
