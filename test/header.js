@@ -6,6 +6,7 @@ window.addEventListener("load", ()=>{
     const header = document.getElementById("header");
     let pos = 0;
     let lastPos = 0;
+    let state = true;
     //darkmode
     const checkToggle = document.getElementById('mode-button');
     const rotateIcon = document.getElementById('rotate');
@@ -34,13 +35,14 @@ window.addEventListener("load", ()=>{
     window.addEventListener("scroll", () => {
         if(!button.checked){
             pos = window.scrollY;
-            if(pos > 300 && pos > lastPos) {
-                header.classList.add('header--unpinned');
-            }
-            if(pos < 300 || pos < lastPos) {
+            if(pos < lastPos) {
                 header.classList.remove('header--unpinned');
+                lastPos = pos;
             }
-            lastPos = pos;
+            if(pos > lastPos + 200) { 
+                header.classList.add('header--unpinned');
+                lastPos = pos;
+            }
         }
     });
     //darkmode
