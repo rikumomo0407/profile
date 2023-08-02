@@ -1,6 +1,7 @@
 *,*::before,*::after{box-sizing:border-box}*{margin:0}html,body{height:100%}body{line-height:1.5;-webkit-font-smoothing:antialiased}img,picture,video,canvas,svg{display:block;max-width:100%}input,button,textarea,select{font:inherit}p,h1,h2,h3,h4,h5,h6{overflow-wrap:break-word}#root,#__next{isolation:isolate}
 
 body{
+    position: relative;
     font-family: Inter,Helvetica Neue,Arial,Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif;
     color: #fff;
     background-color:  var(--bg-color);
@@ -94,6 +95,20 @@ input{
     background-color: var(--bg-bubble-color);
 }
 
+.ad-fixed{
+    position: fixed;
+    top: 100px;
+    max-width: 230px;
+}
+
+#ad-fixed-1{
+    left: 20px;
+}
+
+#ad-fixed-2{
+    right: 20px;
+}
+
 header{
     position: fixed;
     top: -1px;
@@ -128,19 +143,19 @@ header{
     max-height: 28px;
 }
 
-#index{
+#header-index{
     display: none;
     width: 100%;
     padding-bottom: 10px;
 }
 
-#index a{
+#header-index a{
     display: block;
     width: 100%;
     padding: .5rem 1rem;
 }
 
-#index a:hover{
+#header-index a:hover{
     background-color: var(--bg-index-color);
 }
 
@@ -162,6 +177,7 @@ header{
     left: 0;
     bottom: 0;
 }
+
 #darkmode label::after{
     content: "🌞";
     position: absolute;
@@ -220,6 +236,91 @@ article h2{
     margin-bottom: 40px;
     padding: 3px 0 3px 15px;
     border-left: 6px solid var(--bg-filter-dot-color);
+}
+
+.jump{
+    padding-top: 60px;
+    margin-top:-60px;
+}
+
+.index {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: .6em 1em .6em 2em;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: var(--bg-bubble-color);
+}
+
+.index label{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.index label::before{
+    content: url(images/svg/caret-down-solid.svg);
+    width: 1em;
+    margin-right: 15px;
+}
+
+.index:has(:checked) label::before{
+    animation: RotateIcon .5s;
+    rotate: 180deg;
+}
+
+@keyframes RotateIcon {
+    from {
+        rotate: 0deg;
+    }
+    to {
+        rotate: 180deg;
+    }
+}
+
+.index ol {
+    list-style-type: decimal;
+    margin: 0;
+    padding: 0 1.2em;
+    overflow: hidden;
+}
+
+.index > ol {
+    height: 0;
+}
+
+.index:has(:checked) > ol {
+    height: auto;
+    padding-bottom: 1em;
+    animation: SlideIn .5s;
+}
+
+@keyframes SlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.index ol ol {
+    margin-top: 5px;
+}
+
+.index li {
+    padding: 5px 0;
+}
+
+.index a{
+    color: var(--font-bubble-color);
+}
+
+.index a:hover{
+    text-decoration: underline;
 }
 
 #top{
@@ -392,166 +493,62 @@ article h2{
     text-decoration: underline;
 }
 
-#timeline{
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 20px 1.5rem;
-}
-
-.filter{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 22px;
-}
-
-.filter input{
-    display: none;
-}
-
-.filter label{
-    width: 74px;
-    border: none;
-    cursor: pointer;
-    appearance: none;
-    background: transparent;
-    transition: .25s;
-    outline-offset: 2px;
-    text-align: center;
-}
-
-.filter label p{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 6px;
+#recommends{
     width: 100%;
-    aspect-ratio: 1/1;
-    border-radius: 34%;
-    font-size: 30px;
-    background: var(--bg-filter-uncheck-color);
+    max-width: 900px;
+    margin: 150px auto;
+    padding: 0 15px;
 }
 
-
-
-.filter label p::after{
-    content: "";
-    position: absolute;
-    inset: 2px;
-    background: var(--bg-color);
-    border-radius: 34%;
+#recommends h2{
+    display: inline-block;
+    margin: 0 0 10px;
 }
 
-.filter label p span{
-    z-index: 1;
+#recommends h2:hover{
+    text-decoration: underline;
 }
 
-.filter input:checked + label p{
-    background: var(--bg-filter-check-color);
+.user{
+    margin-bottom: 10px;
 }
 
-.filter label > span{
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--font-pale-color);
+.user a{
+    display: inline-flex;
+    align-items: center;
 }
 
-.filter input:checked + label > span{
-    font-weight: 700;
+.user img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px; 
 }
 
-#timeline section{
+.box-tag{
     display: flex;
     flex-wrap: wrap;
-    margin-top: 2rem;
 }
 
-#timeline ul{
-    position: relative;
+.box-tag li a{
+    margin-right: 10px;
+    color: #00aeff;
 }
 
-#timeline ul::before{
-    content: "";
-    position: absolute;
-    left: -2px;
-    top: 10px;
-    bottom: 0;
-    width: 2px;
-    background-color: var(--bg-filter-uncheck-color);
-}
-
-#timeline li{
-    position: relative;
+.box-info{
     display: flex;
+    flex-wrap: wrap;
 }
 
-#timeline li:not(:first-child){
-    margin-top: 1.5rem;
-}
-
-#timeline li:last-child::before{
-    content: "";
-    position: absolute;
-    left: -2px;
-    top: 10px;
-    bottom: 0;
-    width: 2px;
-    background-color: var(--bg-color);
-}
-
-#timeline .dot{
-    position: absolute;
+.box-info div{
     display: flex;
     align-items: center;
-    justify-content: center;
-    border: 4px solid var(--bg-color);
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    top: 2px;
-    left: -9px;
-    background-color: var(--bg-filter-dot-color);
+    margin: 10px 0;
 }
 
-#timeline .log{
-    padding-left: 32px;
-}
-
-.icon{
-    width: 35px;
-    height: 35px;
-    position: absolute;
-    content: '';
-    bottom: -20px;
-    right: 10px;
-    background-color: var(--bg-filter-icon-color);
-    border-radius: 50%;
-    padding: 4px;
-    border: 2px solid var(--bg-color);
-    z-index: 10;
-}
-
-.icon img{
-    margin: auto;
-}
-
-#timeline li time{
-    color: var(--font-pale-color);
-}
-
-.date{
-    margin-bottom: 1rem;
-}
-
-#timeline div > label{
-    width: 74px;
-    border: none;
-    cursor: pointer;
-    appearance: none;
-    background: red;
-    transition: .25s;
-    text-align: center;
+.box-info img{
+    width: 30px;
+    margin: 0 10px;
 }
 
 footer{
@@ -604,18 +601,9 @@ footer{
     }
 }
 
-@media screen and (max-width: 330px){
-    #filter{
-        flex-wrap: wrap;
-    }
-}
-
 @media screen and (max-width: 260px){
     #menu-label{
         width: 16px;
-    }
-    #usericon, #username{
-        display: none;
     }
     #share{
         width: auto;

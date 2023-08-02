@@ -29,6 +29,8 @@
 </head>
 <body id="pagetop">
     <script src="header.js"></script>
+    <!-- <div id="ad-fixed-1" class="ad-fixed"><img src="images/elements/ad-fixed-1.png"><img src="images/elements/ads-list-2.jpeg"></div>
+    <div id="ad-fixed-2" class="ad-fixed"><img src="images/elements/ad-fixed-2.png"></div> -->
     <header id="header">
         <div id="menu">
             <div id="logo">
@@ -37,15 +39,13 @@
                     <img src="images/logo.png">
                 </label>
             </div>
-            <div id="index">
+            <div id="header-index">
                 <ul>
-                    <li><a href="#pagetop">TOP</a></li>
-                    <li><a href="#timeline">TIMELINE</a></li>
-                    <li><a href="#twitter">TWITTER</a></li>
-                    <li><a href="#instagram">INSTAGRAM</a></li>
-                    <li><a href="#github">GITHUB</a></li>
-                    <li><a href="#threads">THREADS</a></li>
+                    <li><a href="#pagetop">HOME</a></li>
+                    <li><a href="#twitter">TREND</a></li>
+                    <li><a href="#instagram">GUIDE</a></li>
                     <li><a href="#qanda">FAQ</a></li>
+                    <li><a href="#timeline">LOGIN</a></li>
                 </ul>
             </div>
         </div>
@@ -66,30 +66,47 @@
         <article>
             <div>中古で購入したMacBook Pro 2019の挙動が色々とおかしかったので、初期化することにしたのだが、インターネット接続画面で「-1008F」というエラーが発生し詰んでしまった。<br>その後一ヶ月ほど奮闘し、とある方法で解決することができたので、共有しようと思う。</div>
             <div class="ad"><a href="https://retrobanner.net/"><img src="images/elements/ads.jpeg" alt="広告"></a></div>
-            <div>初期化のためにMacBook内のハードディスクを削除したあと、再起動するとWiFiの設定画面がでてきたので、自宅のWiFiに接続すると地球儀のイラストが周り出した。と思ったらその数分後に以下の画像のエラーコード「-1008F」が表示された。</div>
+            <div class="index bubble">
+                <input type="checkbox" id="index-button">
+                <label for="index-button">目次</label>
+                <ol>
+                    <li><a href="#jump_001">はじめに</a></li>
+                    <li>
+                        <a href="#jump_002">解決方法</a>
+                        <ol>
+                            <li><a href="#jump_002">Macを探すをオフにする。</a></li>
+                            <li><a href="#jump_003">別のWiFiに切り替える。</a></li>
+                            <li><a href="#jump_004">macOS復旧から起動する。</a></li>
+                            <li><a href="#jump_005">Optionキーを押しながら起動する。</a></li>
+                        </ol>
+                    </li>
+                    <li><a href="#jump_006">最後に</a></li>
+                </ol>
+            </div>
+            <div id="jump_001" class="jump">初期化のためにMacBook内のハードディスクを削除したあと、再起動するとWiFiの設定画面がでてきたので、自宅のWiFiに接続すると地球儀のイラストが周り出した。と思ったらその数分後に以下の画像のエラーコード「-1008F」が表示された。</div>
             <div class="image"><img src="images/elements/error.jpeg" alt="エラー「-1008F」が表示される"></div>
             <div>仕方なく一度Macの電源を落とし、再起動すると...またインターネット接続画面から始まった。この後何度試してみてもエラー。私はここで詰んでしまい、解決するのにかなりの時間を要してしまった。<br>この記事を見て、エラーコード「-1008F」で時間を無駄にする人がこれ以上出ないようにする為にも、調べてわかったいくつかの解決方法とその手順を記していく。</div>
-            <h2>1. Macを探すをオフにする。</h2>
+            <div id="jump_002" class="jump"><h2>1. Macを探すをオフにする。</h2></div>
             <div class="image"><img src="images/elements/find-icon.png" width="200px" alt="「探す」アプリのアイコン"></div>
             <div>まず調べて出てきたのが、「探す」アプリでMacBookが連携されている時にこのバグが発生するという報告だ。iPhoneにプリインストールされている。このアプリからMacBookとの連携を解除してエラーを突破できたという記事もいくつかあったので試してみたが、残念ながら私のMacBookでは効果が見られなかった。</div>
             <div class="image"><img src="images/elements/find-iphone.jpg" alt="iPhoneの「探す」アプリでMacBookを解除している"></div>
             <div>また、ウェブサイトの<a href="https://www.icloud.com/find/">iPhoneを探す</a>からも解除してみたが、変化は見られなかった。</div>
             <div class="image"><img src="images/elements/find-pc.png" alt="ブラウザの「探す」サイトでMacBookを解除している"></div>
             <div>実は私のMacBookは中古で購入したものなので、前の使用者が「探す」を解除していなかったのかもしれない。</div>
-            <h2>2. 別のWiFiに切り替える。</h2>
+            <div id="jump_003" class="jump"><h2>2. 別のWiFiに切り替える。</h2></div>
             <div class="image"><img src="images/elements/internet.jpg" alt="デザリングのイメージ"></div>
             <div>これまで家のWiFiだけで試してきたが、どうやらエラーになるWiFiとならないWiFiがある？ようで、他の人の家のWiFiやスマホのデザリングを使うと上手くいった人がいるようだったので試してみた。<br>しかし結果は家のWiFiの時と何も変わらず、有線で接続してもエラーは治らなかった。</div>
-            <h2>3. macOS復旧から起動する。</h2>
+            <div id="jump_004" class="jump"><h2>3. macOS復旧から起動する。</h2></div>
             <div class="image"><img src="images/elements/recovery-mode.png" alt="リカバリーモードの画面"></div>
             <div><a>Apple公式サイト</a>に「option + command + R」を押して起動するとOS復旧画面から始まるとあったので試してみた。がやはりインターネット接続画面しか表示されなかった。</div>
-            <h2>4. Optionキーを押しながら起動する。</h2>
+            <div id="jump_005" class="jump"><h2>4. Optionキーを押しながら起動する。</h2></div>
             <div>もう修理に出すしかないのかと思っていたその時、海外のエラー「-1008F」を解説している<a href="https://youtu.be/BBp89AqV3jI">Youtube動画</a>を見つけた。この動画にエラー「-1008F」についてのコメントが沢山あり、まだ試していない方法がいくつかあったので全て試してみることにした。すると、ある人のコメントの通りにしたことで、ついにエラーを回避することができた。下に私が解決できた方法を記そうと思う。</div>
             <h3>1 - MacBookの電源をオフにする。</h3>
             <h3>2 - オプションキーを長押ししながら電源をつける。</h3>
             <h3>3 - 地球儀のマークが消えた状態もしくは青色のアイコンが出てきた状態で始まるのでそのままインターネットに接続する。</h3>
             <h3>4 - 接続が開始されたら、すぐに「option + command + R」を押す。(気持ち長めに)</h3>
             <div>2、3回失敗しましたが何度かあったが、この操作に加えインターネットを何度か切り替えているとエラーにならず無事に初期化に成功した。コツはオプションキーをネットのパスワード入力時まで長押ししておくことと、入力した直後から「option + command + R」を押すと上手くいった。optionを長押ししても白黒の地球儀が表示されたインターネット接続画面から始まる場合は、原因がわからないので最も確実な次の方法を試すといいだろう。</div>
-            <h2>最後に</h2>
+            <div id="jump_006" class="jump"><h2>最後に</h2></div>
             <div></div>
         </article>
     </div>
@@ -115,29 +132,54 @@
         <div class="ad-box"><a href=""><img src="images/elements/ads-list-5.jpeg" alt="広告">NUTRILITE 善玉菌は、腸への「定着力」で選びませんか？</a></div>
         <div class="ad-box"><a href=""><img src="images/elements/ads-list-6.png" alt="広告">SONY XPERIA 5Ⅲ / XPERIA 1Ⅲ</a></div>
     </div>
-    <div id="top">
-        <div id="profile-icon">
-            <img src="https://avatars.githubusercontent.com/rikumomo0407">
-            <p>rikumomo0407</p>
-            <p id="description">rikumomo0407 is a developer in Nitkit.</p>
-        </div>
-    </div>
-    <script src="category.js"></script>
-    <div id="timeline">
-        <h1>Timeline</h1>
-        <nav class="filter">
-            <input type="radio" name="filter_button" value="all" id="all" checked>
-            <label for="all"><p><span><img src="images/png/sparkles_3d.png" width="41px"></span></p><span>All</span></label>
-            <input type="radio" name="filter_button" value="releases" id="releases">
-            <label for="releases"><p><span><img src="images/png/partying_face_3d.png" width="41px"></span></p><span>Releases</span></label>
-            <input type="radio" name="filter_button" value="notes" id="notes">
-            <label for="notes"><p><span><img src="images/png/memo_3d.png" width="41px"></span></p><span>Notes</span></label>
-            <input type="radio" name="filter_button" value="others" id="others">
-            <label for="others"><p><span><img src="images/png/moai_3d.png" width="41px"></span></p><span>Others</span></label>
-        </nav>
-        <div></div>
-        <input type="radio" name="more_button" value="show_more" id="show_more">
-        <label for="show_more">Show more</label>
+    <div id="recommends">
+        <h1>おすすめの記事</h1>
+        <ul>
+            <li class="bubble">
+                <div class="user"><a href=""><img src="https://avatars.githubusercontent.com/rikumomo0407">rikumomo0407</a></div>
+                <a href=""><h2>個人でも使える!おすすめAPI一覧</h2></a>
+                <ul class="box-tag">
+                    <li><a href="">#Python</a></li>
+                    <li><a href="">#Instagram</a></li>
+                    <li><a href="">#GoogleCloudPlatform</a></li>
+                </ul>
+                <div class="box-info">
+                    <div><img src="images/png/calendar_3d.png"><time>2021/12/21</time></div>
+                    <div><img src="images/png/eyes_3d.png"><span>31256</span></div>
+                    <div><img src="images/png/thumbs_up_3d_default.png"><span>4475</span></div>
+                </div>
+            </li>
+            <li class="bubble">
+                <div class="user"><a href=""><img src="https://avatars.githubusercontent.com/ren-ichinose">ren_ichinose</a></div>
+                <a href=""><h2>読みたくなるREADMEを書くためのコツ</h2></a>
+                <ul class="box-tag">
+                    <li><a href="">#GitHub</a></li>
+                    <li><a href="">#document</a></li>
+                    <li><a href="">#Readme</a></li>
+                    <li><a href="">#個人開発</a></li>
+                </ul>
+                <div class="box-info">
+                    <div><img src="images/png/calendar_3d.png"><time>2023/7/30</time></div>
+                    <div><img src="images/png/eyes_3d.png"><span>2309</span></div>
+                    <div><img src="images/png/thumbs_up_3d_default.png"><span>73</span></div>
+                </div>
+            </li>
+            <li class="bubble">
+                <div class="user"><a href=""><img src="https://avatars.githubusercontent.com/uhooi">kurokky</a></div>
+                <a href=""><h2>【JSは使わない】HTMLとCSSのみで動く変身ベルトを作る【画像も使わない】</h2></a>
+                <ul class="box-tag">
+                    <li><a href="">#HTML</a></li>
+                    <li><a href="">#CSS</a></li>
+                    <li><a href="">#UI</a></li>
+                    <li><a href="">#Design</a></li>
+                </ul>
+                <div class="box-info">
+                    <div><img src="images/png/calendar_3d.png"><time>2023/08/01</time></div>
+                    <div><img src="images/png/eyes_3d.png"><span>891</span></div>
+                    <div><img src="images/png/thumbs_up_3d_default.png"><span>20</span></div>
+                </div>
+            </li>
+        </ul>
     </div>
     <footer>
         <script src="rocket.js"></script>

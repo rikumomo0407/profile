@@ -1,7 +1,7 @@
 window.addEventListener("load", ()=>{
     //open header
     const button = document.getElementById('menu-button');
-    const index = document.getElementById('index');
+    const index = document.getElementById('header-index');
     //hide header
     const header = document.getElementById("header");
     let pos = 0;
