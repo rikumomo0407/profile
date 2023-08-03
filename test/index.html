@@ -64,8 +64,9 @@
             </div>
         </div>
         <article>
-            <div>中古で購入したMacBook Pro 2019の挙動が色々とおかしかったので、初期化することにしたのだが、インターネット接続画面で「-1008F」というエラーが発生し詰んでしまった。<br>その後一ヶ月ほど奮闘し、とある方法で解決することができたので、共有しようと思う。</div>
+            <p>中古で購入したMacBook Pro 2019の挙動が色々とおかしかったので、初期化することにしたのだが、インターネット接続画面で「-1008F」というエラーが発生し詰んでしまった。<br>その後一ヶ月ほど奮闘し、とある方法で解決することができたので、共有しようと思う。</p>
             <div class="ad"><a href="https://retrobanner.net/"><img src="images/elements/ads.jpeg" alt="広告"></a></div>
+            <script src="index.js"></script>
             <div class="index bubble">
                 <input type="checkbox" id="index-button">
                 <label for="index-button">目次</label>
@@ -83,31 +84,30 @@
                     <li><a href="#jump_006">最後に</a></li>
                 </ol>
             </div>
-            <div id="jump_001" class="jump">初期化のためにMacBook内のハードディスクを削除したあと、再起動するとWiFiの設定画面がでてきたので、自宅のWiFiに接続すると地球儀のイラストが周り出した。と思ったらその数分後に以下の画像のエラーコード「-1008F」が表示された。</div>
-            <div class="image"><img src="images/elements/error.jpeg" alt="エラー「-1008F」が表示される"></div>
-            <div>仕方なく一度Macの電源を落とし、再起動すると...またインターネット接続画面から始まった。この後何度試してみてもエラー。私はここで詰んでしまい、解決するのにかなりの時間を要してしまった。<br>この記事を見て、エラーコード「-1008F」で時間を無駄にする人がこれ以上出ないようにする為にも、調べてわかったいくつかの解決方法とその手順を記していく。</div>
-            <div id="jump_002" class="jump"><h2>1. Macを探すをオフにする。</h2></div>
-            <div class="image"><img src="images/elements/find-icon.png" width="200px" alt="「探す」アプリのアイコン"></div>
-            <div>まず調べて出てきたのが、「探す」アプリでMacBookが連携されている時にこのバグが発生するという報告だ。iPhoneにプリインストールされている。このアプリからMacBookとの連携を解除してエラーを突破できたという記事もいくつかあったので試してみたが、残念ながら私のMacBookでは効果が見られなかった。</div>
-            <div class="image"><img src="images/elements/find-iphone.jpg" alt="iPhoneの「探す」アプリでMacBookを解除している"></div>
-            <div>また、ウェブサイトの<a href="https://www.icloud.com/find/">iPhoneを探す</a>からも解除してみたが、変化は見られなかった。</div>
-            <div class="image"><img src="images/elements/find-pc.png" alt="ブラウザの「探す」サイトでMacBookを解除している"></div>
-            <div>実は私のMacBookは中古で購入したものなので、前の使用者が「探す」を解除していなかったのかもしれない。</div>
-            <div id="jump_003" class="jump"><h2>2. 別のWiFiに切り替える。</h2></div>
-            <div class="image"><img src="images/elements/internet.jpg" alt="デザリングのイメージ"></div>
-            <div>これまで家のWiFiだけで試してきたが、どうやらエラーになるWiFiとならないWiFiがある？ようで、他の人の家のWiFiやスマホのデザリングを使うと上手くいった人がいるようだったので試してみた。<br>しかし結果は家のWiFiの時と何も変わらず、有線で接続してもエラーは治らなかった。</div>
-            <div id="jump_004" class="jump"><h2>3. macOS復旧から起動する。</h2></div>
-            <div class="image"><img src="images/elements/recovery-mode.png" alt="リカバリーモードの画面"></div>
-            <div><a>Apple公式サイト</a>に「option + command + R」を押して起動するとOS復旧画面から始まるとあったので試してみた。がやはりインターネット接続画面しか表示されなかった。</div>
-            <div id="jump_005" class="jump"><h2>4. Optionキーを押しながら起動する。</h2></div>
-            <div>もう修理に出すしかないのかと思っていたその時、海外のエラー「-1008F」を解説している<a href="https://youtu.be/BBp89AqV3jI">Youtube動画</a>を見つけた。この動画にエラー「-1008F」についてのコメントが沢山あり、まだ試していない方法がいくつかあったので全て試してみることにした。すると、ある人のコメントの通りにしたことで、ついにエラーを回避することができた。下に私が解決できた方法を記そうと思う。</div>
+            <p id="jump_001">初期化のためにMacBook内のハードディスクを削除したあと、再起動するとWiFiの設定画面がでてきたので、自宅のWiFiに接続すると地球儀のイラストが周り出した。と思ったらその数分後に以下の画像のエラーコード「-1008F」が表示された。</p>
+            <img src="images/elements/error.jpeg" alt="エラー「-1008F」が表示される">
+            <p>仕方なく一度Macの電源を落とし、再起動すると...またインターネット接続画面から始まった。この後何度試してみてもエラー。私はここで詰んでしまい、解決するのにかなりの時間を要してしまった。<br>この記事を見て、エラーコード「-1008F」で時間を無駄にする人がこれ以上出ないようにする為にも、調べてわかったいくつかの解決方法とその手順を記していく。</p>
+            <h2 id="jump_002">1. Macを探すをオフにする。</h2>
+            <img src="images/elements/find-icon.png" width="200px" alt="「探す」アプリのアイコン">
+            <p>まず調べて出てきたのが、「探す」アプリでMacBookが連携されている時にこのバグが発生するという報告だ。iPhoneにプリインストールされている。このアプリからMacBookとの連携を解除してエラーを突破できたという記事もいくつかあったので試してみたが、残念ながら私のMacBookでは効果が見られなかった。</p>
+            <img src="images/elements/find-iphone.jpg" alt="iPhoneの「探す」アプリでMacBookを解除している">
+            <p>また、ウェブサイトの<a href="https://www.icloud.com/find/">iPhoneを探す</a>からも解除してみたが、変化は見られなかった。</p>
+            <img src="images/elements/find-pc.png" alt="ブラウザの「探す」サイトでMacBookを解除している">
+            <p>実は私のMacBookは中古で購入したものなので、前の使用者が「探す」を解除していなかったのかもしれない。</p>
+            <h2 id="jump_003">2. 別のWiFiに切り替える。</h2>
+            <img src="images/elements/internet.jpg" alt="デザリングのイメージ">
+            <p>これまで家のWiFiだけで試してきたが、どうやらエラーになるWiFiとならないWiFiがある？ようで、他の人の家のWiFiやスマホのデザリングを使うと上手くいった人がいるようだったので試してみた。<br>しかし結果は家のWiFiの時と何も変わらず、有線で接続してもエラーは治らなかった。</p>
+            <h2 id="jump_004">3. macOS復旧から起動する。</h2>
+            <img src="images/elements/recovery-mode.png" alt="リカバリーモードの画面">
+            <p><a>Apple公式サイト</a>に「option + command + R」を押して起動するとOS復旧画面から始まるとあったので試してみた。がやはりインターネット接続画面しか表示されなかった。</p>
+            <h2 id="jump_005">4. Optionキーを押しながら起動する。</h2>
+            <p>もう修理に出すしかないのかと思っていたその時、海外のエラー「-1008F」を解説している<a href="https://youtu.be/BBp89AqV3jI">Youtube動画</a>を見つけた。この動画にエラー「-1008F」についてのコメントが沢山あり、まだ試していない方法がいくつかあったので全て試してみることにした。すると、ある人のコメントの通りにしたことで、ついにエラーを回避することができた。下に私が解決できた方法を記そうと思う。</p>
             <h3>1 - MacBookの電源をオフにする。</h3>
             <h3>2 - オプションキーを長押ししながら電源をつける。</h3>
             <h3>3 - 地球儀のマークが消えた状態もしくは青色のアイコンが出てきた状態で始まるのでそのままインターネットに接続する。</h3>
             <h3>4 - 接続が開始されたら、すぐに「option + command + R」を押す。(気持ち長めに)</h3>
-            <div>2、3回失敗しましたが何度かあったが、この操作に加えインターネットを何度か切り替えているとエラーにならず無事に初期化に成功した。コツはオプションキーをネットのパスワード入力時まで長押ししておくことと、入力した直後から「option + command + R」を押すと上手くいった。optionを長押ししても白黒の地球儀が表示されたインターネット接続画面から始まる場合は、原因がわからないので最も確実な次の方法を試すといいだろう。</div>
-            <div id="jump_006" class="jump"><h2>最後に</h2></div>
-            <div></div>
+            <p>2、3回失敗しましたが何度かあったが、この操作に加えインターネットを何度か切り替えているとエラーにならず無事に初期化に成功した。コツはオプションキーをネットのパスワード入力時まで長押ししておくことと、入力した直後から「option + command + R」を押すと上手くいった。optionを長押ししても白黒の地球儀が表示されたインターネット接続画面から始まる場合は、原因がわからないので最も確実な次の方法を試すといいだろう。</p>
+            <h2 id="jump_006">最後に</h2>
         </article>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
@@ -137,7 +137,7 @@
         <ul>
             <li class="bubble">
                 <div class="user"><a href=""><img src="https://avatars.githubusercontent.com/rikumomo0407">rikumomo0407</a></div>
-                <a href=""><h2>個人でも使える!おすすめAPI一覧</h2></a>
+                <div class="box-title"><a href=""><h2>個人でも使える!おすすめAPI一覧</h2></a></div>
                 <ul class="box-tag">
                     <li><a href="">#Python</a></li>
                     <li><a href="">#Instagram</a></li>
@@ -151,7 +151,7 @@
             </li>
             <li class="bubble">
                 <div class="user"><a href=""><img src="https://avatars.githubusercontent.com/ren-ichinose">ren_ichinose</a></div>
-                <a href=""><h2>読みたくなるREADMEを書くためのコツ</h2></a>
+                <div class="box-title"><a href=""><h2>読みたくなるREADMEを書くためのコツ</h2></a></div>
                 <ul class="box-tag">
                     <li><a href="">#GitHub</a></li>
                     <li><a href="">#document</a></li>
@@ -166,7 +166,7 @@
             </li>
             <li class="bubble">
                 <div class="user"><a href=""><img src="https://avatars.githubusercontent.com/uhooi">kurokky</a></div>
-                <a href=""><h2>【JSは使わない】HTMLとCSSのみで動く変身ベルトを作る【画像も使わない】</h2></a>
+                <div class="box-title"><a href=""><h2>【JSは使わない】HTMLとCSSのみで動く変身ベルトを作る【画像も使わない】</h2></a></div>
                 <ul class="box-tag">
                     <li><a href="">#HTML</a></li>
                     <li><a href="">#CSS</a></li>

@@ -2,6 +2,7 @@
 
 body{
     position: relative;
+    scroll-padding-top: 100px;
     font-family: Inter,Helvetica Neue,Arial,Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif;
     color: #fff;
     background-color:  var(--bg-color);
@@ -26,6 +27,7 @@ body{
 
 .mode-light{
     --bg-color: #9cd6ef;
+    /* --bg-color: #00a6ff; */
     --bg-header-color: rgb(154, 213, 239, 0.5);
     --bg-index-color: rgba(100, 100, 100, 0.5);
     --bg-bubble-color: #fff;
@@ -88,8 +90,8 @@ input{
     font-weight: 400;
     font-size: .95rem;
     font-weight: 700;
-    margin-bottom: .3rem;
-    padding: 1.3rem 1.2rem;
+    margin-bottom: 20px;
+    padding: 16px 20px;
     border-radius: 14px;
     color: var(--font-bubble-color);
     background-color: var(--bg-bubble-color);
@@ -212,7 +214,8 @@ header{
     margin-right: 10px;
 }
 
-article div{
+/*article*/
+article p{
     margin: 30px 0;
 }
 
@@ -236,11 +239,6 @@ article h2{
     margin-bottom: 40px;
     padding: 3px 0 3px 15px;
     border-left: 6px solid var(--bg-filter-dot-color);
-}
-
-.jump{
-    padding-top: 60px;
-    margin-top:-60px;
 }
 
 .index {
@@ -323,61 +321,7 @@ article h2{
     text-decoration: underline;
 }
 
-#top{
-    width: 100%;
-    max-width: 900px;
-    text-align: center;
-    margin: 0 auto;
-    padding: 50px 2rem 0;
-    color: #fff;
-}
-
-#profile-icon{
-    margin-top: 2rem;
-    font-size: 1.05rem;
-    font-weight: 500;
-    line-height: 1.5;
-}
-
-#profile-icon img{
-	display: inline-block;
-	border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    margin-top: 2rem;
-}
-
-#description{
-    margin-top: 1rem;
-    color: var(--font-pale-color);
-}
-
-#container{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-#container div a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 26px;
-    box-shadow: 0 20px 40px -16px rgba(0,0,0,.4);
-    aspect-ratio: 1/1;
-    transition: .2s ease;
-}
-
-#container div a:hover{
-    transform: translateY(-2px) scale(1.02);
-}
-
-#container img{
-    width: 35%;
-    z-index: 1;
-}
-
+/*subcontents*/
 #reaction{
     margin-bottom: 60px;
     text-align: center;
@@ -509,13 +453,15 @@ article h2{
     text-decoration: underline;
 }
 
-.user{
-    margin-bottom: 10px;
+.box-title a{
+    color: var(--font-bubble-color);
 }
 
 .user a{
     display: inline-flex;
     align-items: center;
+    color: var(--font-bubble-color);
+    margin: 10px 0;
 }
 
 .user img{
@@ -579,8 +525,8 @@ footer{
 }
 
 @media screen and (max-width: 500px){
-    #container{
-        grid-template-columns: repeat(2,1fr);
+    .bubble{
+        padding: 6px 16px;
     }
 
     article img{
