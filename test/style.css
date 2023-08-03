@@ -26,9 +26,10 @@ body{
 }
 
 .mode-light{
-    --bg-color: #9cd6ef;
-    /* --bg-color: #00a6ff; */
-    --bg-header-color: rgb(154, 213, 239, 0.5);
+    /* --bg-color: #9cd6ef; */
+    --bg-color: #4fc7ff;
+    /* --bg-header-color: rgb(154, 213, 239, 0.5); */
+    --bg-header-color: rgb(79, 199, 255, 0.5);
     --bg-index-color: rgba(100, 100, 100, 0.5);
     --bg-bubble-color: #fff;
     --bg-filter-uncheck-color: rgba(232, 231, 255, 0.5);
@@ -261,6 +262,10 @@ article h2{
     content: url(images/svg/caret-down-solid.svg);
     width: 1em;
     margin-right: 15px;
+}
+
+.mode-light .index label::before{
+    content: url(images/svg/caret-down-solid-dark.svg);
 }
 
 .index:has(:checked) label::before{
