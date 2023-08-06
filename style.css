@@ -218,8 +218,9 @@ header{
     z-index: 1;
 }
 
-#sns #twitter-icon a{
-    background: linear-gradient(144deg,#84d0ff,#19a7ff 50%,#1da1f2 60%,#1a7ee9);
+#sns #x-icon a{
+    /* background: linear-gradient(144deg,#84d0ff,#19a7ff 50%,#1da1f2 60%,#1a7ee9); */
+    background: linear-gradient(144deg,#222222,#1f2124 50%,#161b22,#161616);
 }
 
 #sns #instagram-icon a{
@@ -426,18 +427,13 @@ header{
     text-align: center;
 }
 
-
-#twitter{
+#x{
     margin-top: 30px;
     padding: 20px 2rem;
     text-align: center;
 }
 
-#twitter-announce img{
-    margin: 0 auto 10px;
-}
-
-#twitter-setting{
+#x-setting{
     display: flex;
     justify-content: center;
     align-items: center;
