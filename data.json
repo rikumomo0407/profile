@@ -1,5 +1,6 @@
 {
     "timeline" : [
+        {"date" : "2023-08-07", "category" : "notes", "content" : "Twitterの名称がXに変更されました。またAPI制限が解除され、タイムラインが表示できるようになりました。"},
         {"date" : "2023-07-17", "category" : "others", "content" : "前期期末試験のためGitHubの更新を一時休止します。"},
         {"date" : "2023-07-07", "category" : "notes", "content" : "TwitterのAPI制限により、タイムラインが一時的に非表示になっています。"},
         {"date" : "2023-06-09", "category" : "others", "content" : "本日よりGitHubの更新を再開します。"},
